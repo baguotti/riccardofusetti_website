@@ -17,7 +17,7 @@ export default function ContactPage() {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-[#000000] pt-32 pb-24 px-6 md:px-12 lg:px-20">
+        <div ref={containerRef} className="min-h-screen bg-[#050505] pt-32 pb-24 px-6 md:px-12 lg:px-20">
             <div className="max-w-4xl mx-auto">
                 <h2
                     ref={el => { contentRefs.current[0] = el; }}

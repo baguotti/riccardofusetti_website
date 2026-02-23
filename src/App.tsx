@@ -22,7 +22,7 @@ function MasterView() {
   const filteredProjects = projects.filter(p => p.category === activeCategory);
 
   return (
-    <div className="pt-12 flex flex-col relative z-10 bg-[#000000]">
+    <div className="pt-12 flex flex-col relative z-10 bg-[#050505]">
       <ThumbnailGrid projects={filteredProjects} />
     </div>
   );

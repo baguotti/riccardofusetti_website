@@ -67,7 +67,7 @@ export default function ProjectPage() {
     if (!project) return <Navigate to="/" replace />;
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-[#000000] pt-24 pb-12 px-6 max-w-5xl mx-auto">
+        <div ref={containerRef} className="min-h-screen bg-[#050505] pt-24 pb-12 px-6 max-w-5xl mx-auto">
             <Link
                 ref={el => { contentRefs.current[0] = el; }}
                 to="/"
@@ -79,7 +79,7 @@ export default function ProjectPage() {
 
             <div
                 ref={el => { contentRefs.current[1] = el; }}
-                className="aspect-video w-full bg-[#000000] mb-12 rounded-xl overflow-hidden border border-[#1A1A1A] relative"
+                className="aspect-video w-full bg-[#050505] mb-12 rounded-xl overflow-hidden border border-[#1A1A1A] relative"
             >
                 {!isPlaying ? (
                     <button
@@ -238,12 +238,12 @@ export default function ProjectPage() {
                 project.gallery && project.gallery.length > 0 && (
                     <div className="mt-8">
                         <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Gallery</h2>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2">
+                        <div className={`grid gap-1 md:gap-2 ${project.gallery.length === 2 || project.gallery.length === 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'}`}>
                             {project.gallery.map((img, index) => (
                                 <button
                                     key={index}
                                     onClick={() => setSelectedImageIndex(index)}
-                                    className="w-full bg-[#000000] rounded-sm overflow-hidden border border-[#1A1A1A] cursor-pointer group/still"
+                                    className="w-full bg-[#050505] rounded-sm overflow-hidden border border-[#1A1A1A] cursor-pointer group/still outline-none focus:outline-none"
                                 >
                                     <img
                                         src={img}
