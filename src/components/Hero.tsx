@@ -19,7 +19,7 @@ export default function Hero() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-[#050505]">
+        <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-[#000000]">
             {/* Background with subtle architecture mood */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 shrink-0"
@@ -27,7 +27,7 @@ export default function Hero() {
             ></div>
 
             {/* Heavy unified black gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/80 to-transparent"></div>
 
             {/* Content layout pushed to bottom-left third */}
             <div className="relative h-full flex flex-col justify-end p-6 md:p-12 lg:p-20 pb-24 md:pb-32 w-full max-w-7xl mx-auto">
@@ -55,7 +55,7 @@ export default function Hero() {
                         className="inline-flex overflow-hidden relative items-center justify-center rounded-full border border-[#1A1A1A] px-8 py-4 text-xs font-semibold text-[#FFFFFF] uppercase tracking-widest transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-[1.03]"
                     >
                         <span className="absolute inset-0 bg-[#D6D3C9] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></span>
-                        <span className="relative z-10 group-hover:text-[#050505] transition-colors duration-300">View Selected Work</span>
+                        <span className="relative z-10 group-hover:text-[#000000] transition-colors duration-300">View Selected Work</span>
                     </a>
                 </div>
             </div>

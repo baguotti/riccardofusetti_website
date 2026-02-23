@@ -1,7 +1,7 @@
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0A0A0A] rounded-t-[4rem] px-6 md:px-12 lg:px-20 py-24 mt-32 border-t border-[#1A1A1A]">
+        <footer className="bg-[#000000] rounded-t-[4rem] px-6 md:px-12 lg:px-20 py-24 mt-32 border-t border-[#1A1A1A]">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div className="md:col-span-2 space-y-4">
                     <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#FAF8F5] uppercase">Riccardo Fusetti</h2>

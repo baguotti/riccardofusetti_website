@@ -1,6 +1,8 @@
 export type Credit = {
     role: string;
     name: string;
+    instagram?: string;
+    url?: string;
 };
 
 export type PressLink = {
@@ -20,4 +22,5 @@ export type Project = {
     credits?: Credit[];
     press?: PressLink[];
     gallery?: string[];
+    posterUrl?: string;
 };
