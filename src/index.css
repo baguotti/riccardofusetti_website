@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #050505;
+  --color-accent: #D6D3C9;
+  --color-background: #FFFFFF;
+  --color-slate: #1A1A1A;
+  --color-surface: #0A0A0A;
+  --color-border: #1A1A1A;
+
+  --font-heading: 'Inter', sans-serif;
+  --font-data: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+
+  html,
+  body,
+  #root {
+    background-color: #050505;
+    color: var(--color-background);
+    font-family: var(--font-heading);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.04em;
+  }
+}
+
+/* CSS Global Noise Overlay Class directly used in App.tsx */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Hide scrollbar for cinematic feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
