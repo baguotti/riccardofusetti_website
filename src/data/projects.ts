@@ -155,11 +155,22 @@ export const projects: Project[] = [
         id: 'circus-of-bones',
         title: 'Circus of Bones // Una and the Lion',
         category: 'director',
-        thumbnailUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1600&auto=format&fit=crop',
-        videoEmbedUrl: 'https://player.vimeo.com/video/76979871',
+        thumbnailUrl: 'https://images.squarespace-cdn.com/content/v1/56e029c607eaa0f075505e65/1627248623953-1OSOE8W3AQ9S4OQKBIGY/Una+and+The+Lion_MASTER_ProRes.00_01_52_13.Still026.png',
+        videoEmbedUrl: 'https://player.vimeo.com/video/578480693',
         year: '2021',
-        client: 'Music Video',
-        description: 'Una and the Lion music video for Circus of Bones.'
+        client: 'Circus of Bones',
+        description: 'Official music video for Una and the Lion by Circus of Bones.',
+        credits: [
+            { role: 'Directed by', name: 'Riccardo Fusetti' },
+            { role: 'DoP', name: 'Brandon Lee Weston' },
+            { role: 'Producer', name: 'Teodosia Dobriyanova' },
+            { role: 'Production Company', name: 'Wild Island Films' }
+        ],
+        gallery: [
+            'https://images.squarespace-cdn.com/content/v1/56e029c607eaa0f075505e65/1627050591823-H01MIP02FQA5SXAP45N1/Una+and+The+Lion_MASTER_ProRes.00_00_24_14.Still003.png',
+            'https://images.squarespace-cdn.com/content/v1/56e029c607eaa0f075505e65/1627248623953-1OSOE8W3AQ9S4OQKBIGY/Una+and+The+Lion_MASTER_ProRes.00_01_52_13.Still026.png',
+            'https://images.squarespace-cdn.com/content/v1/56e029c607eaa0f075505e65/1627050708953-SV0AYB6DEUY605O488NE/Una+and+The+Lion_MASTER_ProRes.00_03_09_07.Still053.png'
+        ]
     },
     {
         id: 'phobophobes',

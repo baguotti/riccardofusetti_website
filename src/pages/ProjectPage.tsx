@@ -106,6 +106,7 @@ export default function ProjectPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-12 lg:gap-20">
+                {/* Left Column: Title, Description, Credits */}
                 <div>
                     <h1
                         ref={el => { contentRefs.current[2] = el; }}
@@ -133,44 +134,40 @@ export default function ProjectPage() {
                             </div>
                         </div>
                     )}
-
                 </div>
 
+                {/* Right Column: Release, Role, Press & Awards */}
                 <div
                     ref={el => { contentRefs.current[4] = el; }}
-                    className="md:border-l border-[#1A1A1A] md:pl-8 pt-8 md:pt-0 relative"
+                    className="md:border-l border-[#1A1A1A] md:pl-8 pt-8 md:pt-0 flex flex-col h-fit md:sticky md:top-24"
                 >
-                    <div className="md:sticky md:top-24 h-fit flex flex-col">
-                        <div className="flex flex-col">
-                            <div className="flex flex-col">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
-                                <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
-                            </div>
-                            <div className="flex flex-col mt-1">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
-                                <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
+                    <div className="flex flex-col">
+                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
+                        <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
+                    </div>
+                    <div className="flex flex-col mt-1">
+                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
+                        <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
+                    </div>
+
+                    {project.press && (
+                        <div className="flex flex-col gap-4 mt-12">
+                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Press & Awards</h3>
+                            <div className="space-y-4">
+                                {project.press.map((link, i) => (
+                                    <a
+                                        key={i}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group block text-[#FFFFFF]/60 hover:text-[#D6D3C9] transition-colors duration-300"
+                                    >
+                                        <p className="text-xs font-['Inter'] leading-snug">{link.label}</p>
+                                    </a>
+                                ))}
                             </div>
                         </div>
-
-                        {project.press && (
-                            <div className="flex flex-col gap-4 mt-12">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Press & Awards</h3>
-                                <div className="space-y-4">
-                                    {project.press.map((link, i) => (
-                                        <a
-                                            key={i}
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group block text-[#FFFFFF]/60 hover:text-[#D6D3C9] transition-colors duration-300"
-                                        >
-                                            <p className="text-xs font-['Inter'] leading-snug">{link.label}</p>
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    )}
                 </div>
             </div>
 
