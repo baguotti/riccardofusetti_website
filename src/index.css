@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #000000;
+  --color-primary: #050505;
   --color-accent: #D6D3C9;
   --color-background: #FFFFFF;
   --color-slate: #1A1A1A;
@@ -15,12 +15,12 @@
 }
 
 html {
-  background-color: #000000;
+  background-color: #050505;
   scrollbar-gutter: stable;
 }
 
 body {
-  background-color: #000000;
+  background-color: #050505;
   margin: 0;
   padding: 0;
   min-height: 100vh;

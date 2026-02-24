@@ -19,15 +19,15 @@ export default function Hero() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-black">
+        <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-primary">
             {/* Background with subtle architecture mood */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 shrink-0"
                 style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2400&auto=format&fit=crop")' }}
             ></div>
 
-            {/* Heavy unified black gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+            {/* Heavy unified primary gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
 
             {/* Content layout pushed to bottom-left third */}
             <div className="relative h-full flex flex-col justify-end p-6 md:p-12 lg:p-20 pb-24 md:pb-32 w-full max-w-7xl mx-auto">

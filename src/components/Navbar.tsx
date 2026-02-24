@@ -26,7 +26,7 @@ export default function Navbar() {
         <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full flex justify-center px-6">
             <div
                 ref={navRef}
-                className={`pointer-events-auto flex items-center justify-between w-full md:w-fit gap-4 md:gap-12 px-4 md:px-6 py-3 rounded-[3rem] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${scrolled ? 'bg-black/60 backdrop-blur-xl border border-[#1A1A1A]' : 'bg-transparent border border-transparent'
+                className={`pointer-events-auto flex items-center justify-between w-full md:w-fit gap-4 md:gap-12 px-4 md:px-6 py-3 rounded-[3rem] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${scrolled ? 'bg-primary/60 backdrop-blur-xl border border-[#1A1A1A]' : 'bg-transparent border border-transparent'
                     }`}
             >
                 <NavLink

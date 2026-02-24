@@ -21,7 +21,7 @@ export default function ContactPage() {
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="relative min-h-screen bg-black pt-40 pb-24 px-6 md:px-12 overflow-hidden selection:bg-[#D6D3C9] selection:text-black">
+        <div ref={containerRef} className="relative min-h-screen bg-primary pt-40 pb-24 px-6 md:px-12 overflow-hidden selection:bg-[#D6D3C9] selection:text-black">
             {/* Global Noise Overlay */}
             <div className="noise-overlay" />
 
