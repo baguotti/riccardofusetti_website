@@ -22,7 +22,7 @@ export default function ThumbnailGrid({ projects }: Props) {
     }, { scope: containerRef, dependencies: [projects] });
 
     return (
-        <div ref={containerRef} className="w-full max-w-[1440px] mx-auto px-4 md:px-6 pb-24">
+        <div ref={containerRef} className="w-full max-w-[1680px] mx-auto px-4 md:px-6 pb-24">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
                 {projects.map((project) => (
                     <Link
