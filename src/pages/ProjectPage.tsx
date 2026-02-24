@@ -59,9 +59,9 @@ export default function ProjectPage() {
         if (selectedImageIndex !== null || isPosterOpen) {
             document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = 'unset';
+            document.body.style.overflow = 'visible';
         }
-        return () => { document.body.style.overflow = 'unset'; };
+        return () => { document.body.style.overflow = 'visible'; };
     }, [selectedImageIndex, isPosterOpen]);
 
     if (!project) return <Navigate to="/" replace />;
