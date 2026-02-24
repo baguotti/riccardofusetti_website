@@ -281,12 +281,26 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'editor-placeholder-5',
-        title: 'Project Placeholder // 05',
+        id: 'nap-ss24',
+        title: 'Net-A-Porter SS24',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/nap_ss24_thumbnail.png',
+        videoEmbedUrl: 'https://player.vimeo.com/video/933781681',
+        credits: [
+            { role: 'Editor', name: '@riccardo.fusetti' },
+            { role: 'Featuring', name: '@adutakech' },
+            { role: 'Director', name: '@drewvickers' },
+            { role: 'Video Commissioning Director', name: '@lizziejefferies' },
+            { role: 'DOP', name: '@theodorehugonnier' },
+            { role: 'Stylist', name: '@bojana_kozarevic' },
+            { role: 'Art Direction', name: '@chiaramestre, @kerry_heaphy' },
+            { role: 'Post Producer', name: '@priscilanava' },
+            { role: 'Net-A-Porter Team', name: '@kayabarron, @alcaselyhayford, @es.robertson, @gabsylvia, @erinshanahan' },
+            { role: 'Post Production', name: '@wildislandfilms, @amybil' },
+            { role: 'Colourist', name: '@francisqureshi' },
+            { role: 'VFX', name: '@joshaeiffel' },
+            { role: 'Composition & Mix', name: '@father_insta' }
+        ]
     },
     {
         id: 'editor-placeholder-6',
