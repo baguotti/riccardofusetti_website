@@ -315,12 +315,15 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'editor-placeholder-7',
-        title: 'Project Placeholder // 07',
+        id: 'glossier-ultralip',
+        title: 'GLOSSIER // ULTRALIP',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/glossier_ultralip_thumbnail.jpg',
+        videoEmbedUrl: 'https://player.vimeo.com/video/661984905',
+        credits: [
+            { role: 'Edit', name: 'Riccardo Fusetti @Wild Island Films' },
+            { role: 'Director', name: 'Lea Colombo' }
+        ]
     },
     {
         id: 'editor-placeholder-8',
