@@ -237,12 +237,15 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'editor-placeholder-2',
-        title: 'Project Placeholder // 02',
+        id: 'glossier-you',
+        title: 'Glossier You // Impressions of you',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/glossier_you_thumbnail.png',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1016249812',
+        credits: [
+            { role: 'Editor/ Sound design', name: 'Riccardo Fusetti' },
+            { role: 'Production Company', name: 'Wild Island Films' }
+        ]
     },
     {
         id: 'editor-placeholder-3',
