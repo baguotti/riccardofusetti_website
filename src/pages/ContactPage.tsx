@@ -4,53 +4,93 @@ import gsap from 'gsap';
 
 export default function ContactPage() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const contentRefs = useRef<(HTMLElement | null)[]>([]);
+    const contentRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        gsap.from(contentRefs.current, {
-            y: 30,
+        if (!contentRef.current) return;
+
+        const children = contentRef.current.children;
+
+        gsap.from(children, {
+            y: 40,
             opacity: 0,
-            duration: 1,
-            stagger: 0.1,
+            duration: 1.2,
+            stagger: 0.15,
             ease: "power3.out"
         });
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-black pt-32 pb-24 px-6 md:px-12 lg:px-20">
-            <div className="max-w-4xl mx-auto">
-                <h2
-                    ref={el => { contentRefs.current[0] = el; }}
-                    className="text-sm tracking-widest uppercase text-[#1A1A1A] font-['Inter'] mb-12"
-                >
-                    Identity
-                </h2>
-                <div className="space-y-8">
-                    <p
-                        ref={el => { contentRefs.current[1] = el; }}
-                        className="text-2xl md:text-3xl text-[#FFFFFF] leading-tight font-light max-w-2xl"
-                    >
-                        Freelance director and editor from Italy, based in London.
-                    </p>
-                    <div
-                        ref={el => { contentRefs.current[2] = el; }}
-                        className="pt-4 space-y-4 text-sm text-[#D6D3C9] font-['Inter'] leading-relaxed uppercase tracking-widest"
-                    >
-                        <p>
-                            Director representation (non-exclusive): Dadbod Films
+        <div ref={containerRef} className="relative min-h-screen bg-black pt-40 pb-24 px-6 md:px-12 overflow-hidden selection:bg-[#D6D3C9] selection:text-black">
+            {/* Global Noise Overlay */}
+            <div className="noise-overlay" />
+
+            <div className="max-w-[480px] mx-auto relative z-10">
+                <div ref={contentRef} className="space-y-16">
+                    {/* Header Label */}
+                    <div className="flex items-center gap-4">
+                        <span className="w-8 h-[1px] bg-[#1A1A1A]" />
+                        <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#333] font-['JetBrains_Mono']">
+                            Info / Contact
+                        </h2>
+                    </div>
+
+                    {/* Main Statement */}
+                    <div className="space-y-6">
+                        <p className="text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">
+                            <span className="font-['Playfair_Display'] italic pr-2">Freelance</span>
+                            <span className="font-['Inter'] font-light">Director & Editor</span>
                         </p>
-                        <p>
-                            Part of Wild Island Films Editing Roster
+                        <p className="text-sm font-['JetBrains_Mono'] text-[#555] uppercase tracking-widest">
+                            Italy — London — Worldwide
                         </p>
                     </div>
-                    <div
-                        ref={el => { contentRefs.current[3] = el; }}
-                        className="pt-8"
-                    >
-                        <a href="mailto:fusetti.riccardo@gmail.com" className="group relative overflow-hidden inline-flex items-center justify-center rounded-full border border-[#1A1A1A] px-8 py-4 text-xs font-semibold text-[#FFFFFF] uppercase tracking-widest transition-transform duration-300 hover:scale-[1.03]">
-                            <span className="absolute inset-0 bg-[#D6D3C9] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></span>
-                            <span className="relative z-10 group-hover:text-[#000000] transition-colors duration-300">fusetti.riccardo@gmail.com</span>
+
+                    {/* Representation */}
+                    <div className="space-y-4 font-['Inter'] text-[11px] uppercase tracking-[0.2em] text-[#888]">
+                        <div className="flex flex-col gap-1">
+                            <span className="text-[#333] text-[9px] tracking-widest mb-1">Director Representation</span>
+                            <p className="text-white">DADBOD FILMS (Non-Exclusive)</p>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <span className="text-[#333] text-[9px] tracking-widest mb-1">Editor Roster</span>
+                            <p className="text-white font-medium">Wild Island Films</p>
+                        </div>
+                    </div>
+
+                    {/* CTA Section */}
+                    <div className="pt-8">
+                        <a
+                            href="mailto:fusetti.riccardo@gmail.com"
+                            className="group relative overflow-hidden inline-block w-full border border-[#1A1A1A] px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9]"
+                        >
+                            {/* Sliding Background */}
+                            <span className="absolute inset-x-0 bottom-0 h-0 bg-[#D6D3C9] transition-all duration-500 ease-out group-hover:h-full"></span>
+
+                            <div className="relative z-10 flex flex-col items-center gap-2">
+                                <span className="text-[9px] text-[#444] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-300">
+                                    Start a conversation
+                                </span>
+                                <span className="text-sm text-white font-['JetBrains_Mono'] group-hover:text-black transition-colors duration-300">
+                                    fusetti.riccardo@gmail.com
+                                </span>
+                            </div>
+
+                            {/* Corner Accents */}
+                            <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
+                            <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
+                            <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
+                            <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
                         </a>
+                    </div>
+
+                    {/* Footer Status */}
+                    <div className="pt-12 flex items-center justify-between border-t border-[#111]">
+                        <div className="flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                            <span className="text-[9px] font-['JetBrains_Mono'] text-[#333] uppercase tracking-widest">System Operational</span>
+                        </div>
+                        <span className="text-[9px] font-['JetBrains_Mono'] text-[#1A1A1A] uppercase">©2024 RF</span>
                     </div>
                 </div>
             </div>
