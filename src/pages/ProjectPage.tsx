@@ -109,7 +109,7 @@ export default function ProjectPage() {
                 )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-12 lg:gap-20">
+            <div className={project.category === 'director' ? "grid grid-cols-1 md:grid-cols-[1fr_250px] gap-12 lg:gap-20" : "w-full"}>
                 {/* Left Column: Title, Description, Credits */}
                 <div>
                     {project.category === 'director' ? (
@@ -224,13 +224,13 @@ export default function ProjectPage() {
                     )}
                 </div>
 
-                {/* Right Column: Press & Awards */}
-                <div
-                    ref={el => { contentRefs.current[4] = el; }}
-                    className="md:border-l border-[#1A1A1A] md:pl-8 pt-8 md:pt-0 flex flex-col h-fit md:sticky md:top-24"
-                >
-                    {/* Mobile-only Release & Role (hidden on desktop since they're next to title) */}
-                    {project.category === 'director' && (
+                {/* Right Column: Press & Awards (Only for Director projects) */}
+                {project.category === 'director' && (
+                    <div
+                        ref={el => { contentRefs.current[4] = el; }}
+                        className="md:border-l border-[#1A1A1A] md:pl-8 pt-8 md:pt-0 flex flex-col h-fit md:sticky md:top-24"
+                    >
+                        {/* Mobile-only Release & Role (hidden on desktop since they're next to title) */}
                         <div className="flex flex-col gap-4 md:hidden mb-8">
                             <div className="flex flex-col">
                                 <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
@@ -241,43 +241,43 @@ export default function ProjectPage() {
                                 <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
                             </div>
                         </div>
-                    )}
 
-                    {project.press && (
-                        <div className="flex flex-col gap-4 mt-1">
-                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Press & Awards</h3>
-                            <div className="space-y-4">
-                                {project.press.map((link, i) => (
-                                    <a
-                                        key={i}
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="group block text-[#FFFFFF]/60 hover:text-[#D6D3C9] transition-colors duration-300"
-                                    >
-                                        <p className="text-xs font-['Inter'] leading-snug">{link.label}</p>
-                                    </a>
-                                ))}
+                        {project.press && (
+                            <div className="flex flex-col gap-4 mt-1">
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Press & Awards</h3>
+                                <div className="space-y-4">
+                                    {project.press.map((link, i) => (
+                                        <a
+                                            key={i}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group block text-[#FFFFFF]/60 hover:text-[#D6D3C9] transition-colors duration-300"
+                                        >
+                                            <p className="text-xs font-['Inter'] leading-snug">{link.label}</p>
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )}
 
-                    {project.posterUrl && (
-                        <div className={`flex flex-col gap-4 ${project.press && project.press.length > 0 ? 'mt-12' : 'mt-1'}`}>
-                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Poster</h3>
-                            <div
-                                className="overflow-hidden rounded-lg cursor-pointer group/poster relative"
-                                onClick={() => setIsPosterOpen(true)}
-                            >
-                                <img
-                                    src={project.posterUrl}
-                                    alt="Project Poster"
-                                    className="w-full h-auto object-cover opacity-95 group-hover/poster:opacity-100 transition-opacity duration-300"
-                                />
+                        {project.posterUrl && (
+                            <div className={`flex flex-col gap-4 ${project.press && project.press.length > 0 ? 'mt-12' : 'mt-1'}`}>
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Poster</h3>
+                                <div
+                                    className="overflow-hidden rounded-lg cursor-pointer group/poster relative"
+                                    onClick={() => setIsPosterOpen(true)}
+                                >
+                                    <img
+                                        src={project.posterUrl}
+                                        alt="Project Poster"
+                                        className="w-full h-auto object-cover opacity-95 group-hover/poster:opacity-100 transition-opacity duration-300"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    )}
-                </div>
+                        )}
+                    </div>
+                )}
             </div>
 
             {/* Gallery Section - Hidden for Editor category */}
