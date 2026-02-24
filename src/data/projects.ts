@@ -347,30 +347,41 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'editor-placeholder-10',
-        title: 'Project Placeholder // 10',
+        id: 'feel',
+        title: 'Feel Multivitamins // Edit + VFX',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/feel_thumbnail.jpg',
+        videoEmbedUrl: 'https://player.vimeo.com/video/661983214',
+        credits: [
+            { role: 'Edit/ VFX', name: 'Riccardo Fusetti @Wild Island Films' },
+            { role: 'Dop', name: 'Jan Vrhovnik' },
+            { role: 'Production Company', name: 'Wild Island Films' }
+        ]
     },
     {
-        id: 'editor-placeholder-11',
-        title: 'Project Placeholder // 11',
+        id: 'cornerstone',
+        title: 'CORNERSTONE // TV COMMERCIAL',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/cornerstone_thumbnail.jpg',
+        videoEmbedUrl: 'https://player.vimeo.com/video/237764349',
+        credits: [
+            { role: 'Edit and Sound Design', name: 'Riccardo Fusetti' },
+            { role: 'Directed by', name: 'Lawrence Blankenbyl' },
+            { role: 'Producer', name: 'Mike Facey' },
+            { role: 'DOP', name: 'Charles Goodger' },
+            { role: 'Production Company', name: 'Pretzel Films' }
+        ]
     },
     {
-        id: 'editor-placeholder-12',
-        title: 'Project Placeholder // 12',
+        id: 'heaven-up-there',
+        title: 'Palace - Heaven Up There',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
-        credits: []
+        thumbnailUrl: '/assets/projects/heaven_up_there_thumbnail.jpg',
+        videoEmbedUrl: 'https://www.youtube.com/embed/1cS_i-zDdxg',
+        credits: [
+            { role: 'Editor', name: 'Riccardo Fusetti' },
+            { role: 'Directed by', name: 'Leo Wyndham and Eddie Wrey' },
+            { role: 'Graded by', name: 'Art Post' }
+        ]
     }
 ];
