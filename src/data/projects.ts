@@ -222,9 +222,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: '/assets/projects/fila_2022_thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/710480886',
-        year: '2022',
-        client: 'FILA',
-        description: 'Editorial project for FILA.',
         credits: [
             { role: 'Edit + VFX', name: 'Riccardo Fusetti' },
             { role: 'Additional VFX', name: 'RXSSMCDXWELL' },
@@ -237,9 +234,6 @@ export const projects: Project[] = [
             { role: 'MUA', name: 'Grace Ahn' },
             { role: 'Post Production Company', name: 'Wild Island Films' },
             { role: 'Grade', name: 'Stef Colosi @ Wild Island Films' }
-        ],
-        gallery: [
-            '/assets/projects/fila_2022_still_1.png'
         ]
     },
     {
@@ -248,9 +242,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -259,9 +250,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -270,9 +258,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -281,9 +266,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -292,9 +274,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -303,9 +282,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -314,9 +290,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -325,9 +298,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -336,9 +306,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {
@@ -347,9 +314,6 @@ export const projects: Project[] = [
         category: 'editor',
         thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
         videoEmbedUrl: '',
-        year: '2025',
-        client: 'Placeholder',
-        description: 'Project in development.',
         credits: []
     },
     {

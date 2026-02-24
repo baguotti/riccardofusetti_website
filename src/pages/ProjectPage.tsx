@@ -112,68 +112,113 @@ export default function ProjectPage() {
             <div className="grid grid-cols-1 md:grid-cols-[1fr_250px] gap-12 lg:gap-20">
                 {/* Left Column: Title, Description, Credits */}
                 <div>
-                    <div className="flex justify-between items-start gap-8">
-                        <div className="flex-1">
-                            <h1
-                                ref={el => { contentRefs.current[2] = el; }}
-                                className="text-2xl md:text-3xl font-['Inter'] font-light tracking-tight text-[#FFFFFF] mb-3"
-                            >
-                                {project.title}
-                            </h1>
-                            <p
-                                ref={el => { contentRefs.current[3] = el; }}
-                                className="text-base text-[#FFFFFF]/60 font-['Inter'] leading-relaxed"
-                            >
-                                {project.description}
-                            </p>
-                        </div>
-                        <div className="hidden md:flex flex-col gap-4 shrink-0 pt-1">
-                            <div className="flex flex-col">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
-                                <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
+                    {project.category === 'director' ? (
+                        <>
+                            <div className="flex justify-between items-start gap-8">
+                                <div className="flex-1">
+                                    <h1
+                                        ref={el => { contentRefs.current[2] = el; }}
+                                        className="text-2xl md:text-3xl font-['Inter'] font-light tracking-tight text-[#FFFFFF] mb-3"
+                                    >
+                                        {project.title}
+                                    </h1>
+                                    {project.description && (
+                                        <p
+                                            ref={el => { contentRefs.current[3] = el; }}
+                                            className="text-base text-[#FFFFFF]/60 font-['Inter'] leading-relaxed"
+                                        >
+                                            {project.description}
+                                        </p>
+                                    )}
+                                </div>
+                                <div className="hidden md:flex flex-col gap-4 shrink-0 pt-1">
+                                    <div className="flex flex-col">
+                                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
+                                        <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
+                                        <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex flex-col">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
-                                <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mb-8"></div>
+                            <div className="mb-8"></div>
 
-                    {project.credits && (
-                        <div ref={el => { contentRefs.current[5] = el; }} className="mb-0">
-                            <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Credits</h2>
-                            <div className="flex flex-col gap-y-3">
-                                {project.credits.map((credit, i) => {
-                                    if (project.id === 'motivational-short' && !showAllCredits && i > 5) return null;
-                                    const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
+                            {project.credits && (
+                                <div ref={el => { contentRefs.current[5] = el; }} className="mb-0">
+                                    <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Credits</h2>
+                                    <div className="flex flex-col gap-y-3">
+                                        {project.credits.map((credit, i) => {
+                                            if (project.id === 'motivational-short' && !showAllCredits && i > 5) return null;
+                                            const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
 
-                                    return (
-                                        <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#1A1A1A]/50 pb-2">
-                                            <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A] font-['Inter'] shrink-0">{credit.role}</span>
-                                            {link ? (
-                                                <a
-                                                    href={link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#1A1A1A] hover:decoration-[#D6D3C9]"
-                                                >
-                                                    {credit.name}
-                                                </a>
-                                            ) : (
-                                                <span className="text-xs text-[#FFFFFF] text-right font-['Inter']">{credit.name}</span>
-                                            )}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                            {project.id === 'motivational-short' && project.credits.length > 6 && (
-                                <button
-                                    onClick={() => setShowAllCredits(!showAllCredits)}
-                                    className="text-[10px] uppercase tracking-[0.2em] text-[#D6D3C9] font-['Inter'] mt-6 text-left hover:text-[#FFFFFF] transition-colors"
+                                            return (
+                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#1A1A1A]/50 pb-2">
+                                                    <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A] font-['Inter'] shrink-0">{credit.role}</span>
+                                                    {link ? (
+                                                        <a
+                                                            href={link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#1A1A1A] hover:decoration-[#D6D3C9]"
+                                                        >
+                                                            {credit.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-xs text-[#FFFFFF] text-right font-['Inter']">{credit.name}</span>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                    {project.id === 'motivational-short' && project.credits.length > 6 && (
+                                        <button
+                                            onClick={() => setShowAllCredits(!showAllCredits)}
+                                            className="text-[10px] uppercase tracking-[0.2em] text-[#D6D3C9] font-['Inter'] mt-6 text-left hover:text-[#FFFFFF] transition-colors"
+                                        >
+                                            {showAllCredits ? '- Show Less' : '+ Show More'}
+                                        </button>
+                                    )}
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        /* Editor category: side-by-side title/credits layout */
+                        <div className="flex flex-col md:flex-row justify-between items-start gap-12 lg:gap-20">
+                            <div className="flex-1">
+                                <h1
+                                    ref={el => { contentRefs.current[2] = el; }}
+                                    className="text-2xl md:text-3xl font-['Inter'] font-light tracking-tight text-[#FFFFFF] mb-3"
                                 >
-                                    {showAllCredits ? '- Show Less' : '+ Show More'}
-                                </button>
+                                    {project.title}
+                                </h1>
+                            </div>
+                            {project.credits && project.credits.length > 0 && (
+                                <div className="flex-1 w-full md:max-w-md lg:max-w-lg">
+                                    <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Credits</h2>
+                                    <div className="flex flex-col gap-y-3">
+                                        {project.credits.map((credit, i) => {
+                                            const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
+                                            return (
+                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#1A1A1A]/50 pb-2">
+                                                    <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A] font-['Inter'] shrink-0">{credit.role}</span>
+                                                    {link ? (
+                                                        <a
+                                                            href={link}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#1A1A1A] hover:decoration-[#D6D3C9]"
+                                                        >
+                                                            {credit.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="text-xs text-[#FFFFFF] text-right font-['Inter']">{credit.name}</span>
+                                                    )}
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             )}
                         </div>
                     )}
@@ -185,16 +230,18 @@ export default function ProjectPage() {
                     className="md:border-l border-[#1A1A1A] md:pl-8 pt-8 md:pt-0 flex flex-col h-fit md:sticky md:top-24"
                 >
                     {/* Mobile-only Release & Role (hidden on desktop since they're next to title) */}
-                    <div className="flex flex-col gap-4 md:hidden mb-8">
-                        <div className="flex flex-col">
-                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
-                            <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
+                    {project.category === 'director' && (
+                        <div className="flex flex-col gap-4 md:hidden mb-8">
+                            <div className="flex flex-col">
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
+                                <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
+                            </div>
+                            <div className="flex flex-col">
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
+                                <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
+                            </div>
                         </div>
-                        <div className="flex flex-col">
-                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
-                            <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
-                        </div>
-                    </div>
+                    )}
 
                     {project.press && (
                         <div className="flex flex-col gap-4 mt-1">
@@ -233,9 +280,9 @@ export default function ProjectPage() {
                 </div>
             </div>
 
-            {/* Gallery Section - Tighter mt-8 as requested */}
+            {/* Gallery Section - Hidden for Editor category */}
             {
-                project.gallery && project.gallery.length > 0 && (
+                project.category === 'director' && project.gallery && project.gallery.length > 0 && (
                     <div className="mt-8">
                         <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Gallery</h2>
                         <div className={`grid gap-1 md:gap-2 ${project.gallery.length === 2 || project.gallery.length === 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'}`}>

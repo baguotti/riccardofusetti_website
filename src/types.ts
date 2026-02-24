@@ -16,9 +16,9 @@ export type Project = {
     category: 'director' | 'editor';
     thumbnailUrl: string;
     videoEmbedUrl: string;
-    year: string;
-    client: string;
-    description: string;
+    year?: string;
+    client?: string;
+    description?: string;
     credits?: Credit[];
     press?: PressLink[];
     gallery?: string[];
