@@ -337,12 +337,14 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'editor-placeholder-9',
-        title: 'Project Placeholder // 09',
+        id: 'vogue-bella-hadid',
+        title: 'Vogue x Bella Hadid',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/vogue_bella_thumbnail.png',
+        videoEmbedUrl: 'https://player.vimeo.com/video/661990494',
+        credits: [
+            { role: 'Editor', name: 'Riccardo Fusetti' }
+        ]
     },
     {
         id: 'editor-placeholder-10',
