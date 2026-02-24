@@ -42,7 +42,7 @@ export default function ContactPage() {
                             <span className="font-['Inter'] font-light">Director & Editor</span>
                         </p>
                         <p className="text-sm font-['JetBrains_Mono'] text-[#555] uppercase tracking-widest">
-                            Italy — London — Worldwide
+                            London — Worldwide
                         </p>
                     </div>
 
@@ -62,14 +62,14 @@ export default function ContactPage() {
                     <div className="pt-8">
                         <a
                             href="mailto:fusetti.riccardo@gmail.com"
-                            className="group relative overflow-hidden inline-block w-full border border-[#1A1A1A] px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9]"
+                            className="group relative overflow-hidden inline-block w-full border border-[#1A1A1A] px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9] rounded-2xl"
                         >
                             {/* Sliding Background */}
                             <span className="absolute inset-x-0 bottom-0 h-0 bg-[#D6D3C9] transition-all duration-500 ease-out group-hover:h-full"></span>
 
                             <div className="relative z-10 flex flex-col items-center gap-2">
                                 <span className="text-[9px] text-[#444] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-300">
-                                    Start a conversation
+                                    Get in touch
                                 </span>
                                 <span className="text-sm text-white font-['JetBrains_Mono'] group-hover:text-black transition-colors duration-300">
                                     fusetti.riccardo@gmail.com
@@ -77,10 +77,10 @@ export default function ContactPage() {
                             </div>
 
                             {/* Corner Accents */}
-                            <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
-                            <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
-                            <span className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
-                            <span className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300" />
+                            <span className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tl-xl" />
+                            <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tr-xl" />
+                            <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-bl-xl" />
+                            <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-br-xl" />
                         </a>
                     </div>
 
