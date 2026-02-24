@@ -6,7 +6,7 @@ export const projects: Project[] = [
         id: 'editorial-short',
         title: 'Editorial // Short Film',
         category: 'director',
-        thumbnailUrl: '/projects/editorial.jpg',
+        thumbnailUrl: '/assets/editorial-short/still_01.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/1069658930',
         year: '2024',
         client: 'Fashion Lifestyle',
@@ -28,30 +28,30 @@ export const projects: Project[] = [
             { label: 'BIFAN 2025 - Bucheon International Fantastic Film Festival', url: 'https://www.bifan.kr/eng/program/program_view.asp?pk_seq=8023' }
         ],
         gallery: [
-            '/assets/projects/1744234263325-6QG5UQ2PXRVNPFARYLU5_Editorial_Stills_0.png',
-            '/assets/projects/1744234266904-608RLPBKD4CH44TWKZQ7_Editorial_Stills_2.png',
-            '/assets/projects/1744234488120-W4FFIDSC4O57RXRQ0GK7_Editorial_Stills_48.png',
-            '/assets/projects/1744234475337-WH7ER3GQCXHGXGUNDP0A_Editorial_Stills_51.png',
-            '/assets/projects/1744234275369-NPSPOTKQHL7JKDKNRFAT_Editorial_Stills_92.png',
-            '/assets/projects/1744234447722-E03WXKYIYBM95RX9G391_Editorial_Stills_105.png',
-            '/assets/projects/1744234288120-U8RGJO6JRWZAK2O4YTIZ_Editorial_Stills_127.png',
-            '/assets/projects/1744234295385-3RQD44TXPSLDMLJ08T5U_Editorial_Stills_163.png',
-            '/assets/projects/1744234306203-8VJBX93CJ5HS12L1629S_Editorial_Stills_165.png',
-            '/assets/projects/1744234311036-8M3KIJOFQKDA1W4RWKIG_Editorial_Stills_177.png',
-            '/assets/projects/1744234316702-9ATXFLRJSNP4JP73WVGE_Editorial_Stills_182.png',
-            '/assets/projects/1744234323133-6CYO3BSWJQG1O8VJ0NJK_Editorial_Stills_186.png',
-            '/assets/projects/1744234328758-N9NZWBY9LZ051UQCHB0R_Editorial_Stills_187.png',
-            '/assets/projects/1744234461434-XIH51IJUJ3P07QAYJ0E7_Editorial_Stills_223.png',
-            '/assets/projects/1744234341086-8N1C3O874C2UUS5LGACZ_Editorial_Stills_261.png'
+            '/assets/editorial-short/still_02.png',
+            '/assets/editorial-short/still_03.png',
+            '/assets/editorial-short/still_04.png',
+            '/assets/editorial-short/still_05.png',
+            '/assets/editorial-short/still_06.png',
+            '/assets/editorial-short/still_07.png',
+            '/assets/editorial-short/still_08.png',
+            '/assets/editorial-short/still_09.png',
+            '/assets/editorial-short/still_10.png',
+            '/assets/editorial-short/still_11.png',
+            '/assets/editorial-short/still_12.png',
+            '/assets/editorial-short/still_13.png',
+            '/assets/editorial-short/still_14.png',
+            '/assets/editorial-short/still_15.png',
+            '/assets/editorial-short/still_16.png'
         ],
-        posterUrl: '/assets/posters/editorial_poster.jpg'
+        posterUrl: '/assets/editorial-short/poster.jpg'
     },
     {
         id: 'motivational-short',
         title: 'Motivational // Short Film',
         category: 'director',
-        thumbnailUrl: '/projects/motivational_thumbnail.jpg',
-        posterUrl: '/assets/posters/motivational_poster.jpg',
+        thumbnailUrl: '/assets/motivational-short/thumbnail.jpg',
+        posterUrl: '/assets/motivational-short/poster.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/915514135',
         year: '2024',
         client: 'A DadBod Films Production',
@@ -95,12 +95,12 @@ export const projects: Project[] = [
             { role: 'Production Company', name: 'DadBod Films', instagram: 'dadbod_films' }
         ],
         gallery: [
-            '/assets/projects/Motivational_Stills_05.png',
-            '/assets/projects/Motivational_Stills_00.jpg',
-            '/assets/projects/Motivational_Stills_19.png',
-            '/assets/projects/Motivational_Stills_13.png',
-            '/assets/projects/Motivational_Stills_33.png',
-            '/assets/projects/Motivational_Stills_23.png'
+            '/assets/motivational-short/still_01.png',
+            '/assets/motivational-short/still_02.jpg',
+            '/assets/motivational-short/still_03.png',
+            '/assets/motivational-short/still_04.png',
+            '/assets/motivational-short/still_05.png',
+            '/assets/motivational-short/still_06.png'
         ]
     },
     {
@@ -108,7 +108,7 @@ export const projects: Project[] = [
         title: 'Generation // Short Film',
         category: 'director',
         thumbnailUrl: '/assets/projects/1677749757527-X2HXVOBM0FUTCQ24ZE4K_GENERATION_Thumb_With+Laurels_Wide.jpg',
-        posterUrl: '/assets/posters/generation_poster.jpg',
+        posterUrl: '/assets/generation-short/poster.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/750931199',
         year: '2022',
         client: 'Wild Island Films',
@@ -136,19 +136,19 @@ export const projects: Project[] = [
             { label: 'Stash', url: 'https://www.stashmedia.tv/generation-short-film-by-riccardo-fusetti/' }
         ],
         gallery: [
-            '/assets/projects/3c8924d1-17cb-4ab9-a26f-4bc633e37a98_Generation_Delivery_2x1_.00_00_28_11.Still227.png',
-            '/assets/projects/2b672551-1a8f-4352-9089-9231d8aac666_Generation_Delivery_2x1_.00_00_38_06.Still239.png',
-            '/assets/projects/a49038e0-e8b1-4d6f-8f29-beb0f2c137f2_Generation_Delivery_2x1_.00_01_51_07.Still262.png',
-            '/assets/projects/b0457aff-9669-434a-9124-552733b58a4e_Generation_Delivery_2x1_.00_01_29_16.Still304.png',
-            '/assets/projects/56526e7c-ad5e-4be8-9340-ed72079d8a1f_Generation_Delivery_2x1_.00_00_57_22.Still276.png',
-            '/assets/projects/1b74f4ca-8201-46d1-ad63-2562254af7d2_Generation_Delivery_2x1_.00_01_04_09.Still295.png'
+            '/assets/generation-short/still_02.png',
+            '/assets/generation-short/still_03.png',
+            '/assets/generation-short/still_04.png',
+            '/assets/generation-short/still_05.png',
+            '/assets/generation-short/still_06.png',
+            '/assets/generation-short/still_07.png'
         ]
     },
     {
         id: 'deliverance',
         title: 'Hobbie Stuart // Deliverance',
         category: 'director',
-        thumbnailUrl: '/projects/deliverance.jpg',
+        thumbnailUrl: '/assets/deliverance/still_01.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/597116248',
         year: '2021',
         client: 'Hobbie Stuart',
@@ -198,7 +198,7 @@ export const projects: Project[] = [
         id: 'phobophobes',
         title: 'Phobophobes // Moustache Mike',
         category: 'director',
-        thumbnailUrl: '/assets/projects/Moustache_Mike_MM_01_compressed.jpg',
+        thumbnailUrl: '/assets/phobophobes/still_01.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/455051917',
         year: '2018',
         client: 'Phobophobes',
@@ -212,15 +212,15 @@ export const projects: Project[] = [
             { role: 'Gaffer', name: 'Morgan Shaw', instagram: 'morganshawphoto' }
         ],
         gallery: [
-            '/assets/projects/Moustache_Mike_MM_Gif.gif',
-            '/assets/projects/Moustache_Mike_MM_Gif_Rain.gif'
+            '/assets/phobophobes/animation.gif',
+            '/assets/phobophobes/animation.gif'
         ]
     },
     {
         id: 'fila-2022',
         title: 'FILA 2022',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/fila_2022_thumbnail.png',
+        thumbnailUrl: '/assets/fila-2022/thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/710480886',
         credits: [
             { role: 'Edit + VFX', name: 'Riccardo Fusetti' },
@@ -240,7 +240,7 @@ export const projects: Project[] = [
         id: 'glossier-you',
         title: 'Glossier You // Impressions of you',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/glossier_you_thumbnail.png',
+        thumbnailUrl: '/assets/glossier-you/thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/1016249812',
         credits: [
             { role: 'Editor/ Sound design', name: 'Riccardo Fusetti' },
@@ -251,7 +251,7 @@ export const projects: Project[] = [
         id: 'savagexfenty',
         title: 'SAVAGE X FENTY Mens Loungewear',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/savagexfenty_thumbnail.png',
+        thumbnailUrl: '/assets/savagexfenty/thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/1062813923',
         credits: [
             { role: 'Edit', name: 'Riccardo Fusetti' },
@@ -268,7 +268,7 @@ export const projects: Project[] = [
         id: 'silent-sam',
         title: 'Silent Sam // Documentary',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/silent_sam_thumbnail.jpg',
+        thumbnailUrl: '/assets/silent-sam/thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/289836809',
         credits: [
             { role: 'Commissioned by', name: 'The Guardian' },
@@ -284,7 +284,7 @@ export const projects: Project[] = [
         id: 'nap-ss24',
         title: 'Net-A-Porter SS24',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/nap_ss24_thumbnail.png',
+        thumbnailUrl: '/assets/nap-ss24/thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/933781681',
         credits: [
             { role: 'Editor', name: '@riccardo.fusetti' },
@@ -306,7 +306,7 @@ export const projects: Project[] = [
         id: 'primark-spring',
         title: 'Primark // Spring',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/primark_spring_thumbnail.jpg',
+        thumbnailUrl: '/assets/primark-spring/thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661987360',
         credits: [
             { role: 'Edit + Sound Design', name: 'Riccardo Fusetti @Wild Island Films' },
@@ -318,7 +318,7 @@ export const projects: Project[] = [
         id: 'glossier-ultralip',
         title: 'GLOSSIER // ULTRALIP',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/glossier_ultralip_thumbnail.jpg',
+        thumbnailUrl: '/assets/glossier-ultralip/thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661984905',
         credits: [
             { role: 'Edit', name: 'Riccardo Fusetti @Wild Island Films' },
@@ -329,7 +329,7 @@ export const projects: Project[] = [
         id: 'calvin-klein-jeans',
         title: 'Calvin Klein Jeans',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/ck_jeans_thumbnail.jpg',
+        thumbnailUrl: '/assets/calvin-klein-jeans/thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661990174',
         credits: [
             { role: 'Edit + Sound Design', name: 'Riccardo Fusetti @WIld Island FIlms' },
@@ -340,7 +340,7 @@ export const projects: Project[] = [
         id: 'vogue-bella-hadid',
         title: 'Vogue x Bella Hadid',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/vogue_bella_thumbnail.png',
+        thumbnailUrl: '/assets/vogue-bella-hadid/thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/661990494',
         credits: [
             { role: 'Editor', name: 'Riccardo Fusetti' }
@@ -350,7 +350,7 @@ export const projects: Project[] = [
         id: 'feel',
         title: 'Feel Multivitamins // Edit + VFX',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/feel_thumbnail.jpg',
+        thumbnailUrl: '/assets/feel/thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661983214',
         credits: [
             { role: 'Edit/ VFX', name: 'Riccardo Fusetti @Wild Island Films' },
@@ -362,7 +362,7 @@ export const projects: Project[] = [
         id: 'cornerstone',
         title: 'CORNERSTONE // TV COMMERCIAL',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/cornerstone_thumbnail.jpg',
+        thumbnailUrl: '/assets/cornerstone/thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/237764349',
         credits: [
             { role: 'Edit and Sound Design', name: 'Riccardo Fusetti' },
@@ -376,7 +376,7 @@ export const projects: Project[] = [
         id: 'heaven-up-there',
         title: 'Palace - Heaven Up There',
         category: 'editor',
-        thumbnailUrl: '/assets/projects/heaven_up_there_thumbnail.jpg',
+        thumbnailUrl: '/assets/heaven-up-there/thumbnail.jpg',
         videoEmbedUrl: 'https://www.youtube.com/embed/1cS_i-zDdxg',
         credits: [
             { role: 'Editor', name: 'Riccardo Fusetti' },
