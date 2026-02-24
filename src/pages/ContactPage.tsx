@@ -54,7 +54,14 @@ export default function ContactPage() {
                         </div>
                         <div className="flex flex-col gap-1">
                             <span className="text-[#333] text-[9px] tracking-widest mb-1">Editor Roster</span>
-                            <p className="text-white font-medium">Wild Island Films</p>
+                            <a
+                                href="https://wildislandfilms.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white font-medium hover:text-[#D6D3C9] transition-colors duration-300"
+                            >
+                                Wild Island Films
+                            </a>
                         </div>
                     </div>
 
@@ -84,14 +91,6 @@ export default function ContactPage() {
                         </a>
                     </div>
 
-                    {/* Footer Status */}
-                    <div className="pt-12 flex items-center justify-between border-t border-[#111]">
-                        <div className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                            <span className="text-[9px] font-['JetBrains_Mono'] text-[#333] uppercase tracking-widest">System Operational</span>
-                        </div>
-                        <span className="text-[9px] font-['JetBrains_Mono'] text-[#1A1A1A] uppercase">©2024 RF</span>
-                    </div>
                 </div>
             </div>
         </div>

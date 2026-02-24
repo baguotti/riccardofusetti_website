@@ -1,0 +1,29 @@
+import { Instagram, Mail } from 'lucide-react';
+
+export default function Footer() {
+    return (
+        <footer className="w-full px-6 pb-12 mt-12">
+            <div className="max-w-[440px] mx-auto border-t border-[#1A1A1A] pt-12 flex flex-col items-center gap-12">
+                <div className="flex items-center gap-8">
+                    <a
+                        href="https://instagram.com/riccardo.fusetti"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#555] hover:text-[#D6D3C9] transition-colors duration-300 transform hover:scale-110"
+                        aria-label="Instagram"
+                    >
+                        <Instagram size={18} strokeWidth={1.2} />
+                    </a>
+                    <a
+                        href="mailto:fusetti.riccardo@gmail.com"
+                        className="text-[#555] hover:text-[#D6D3C9] transition-colors duration-300 transform hover:scale-110"
+                        aria-label="Email"
+                    >
+                        <Mail size={18} strokeWidth={1.2} />
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+    );
+}

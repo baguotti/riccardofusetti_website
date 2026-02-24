@@ -97,7 +97,7 @@ export default function ProjectPage() {
                     </button>
                 ) : (
                     <iframe
-                        src={`${project.videoEmbedUrl}?autoplay=1`}
+                        src={`${project.videoEmbedUrl}?autoplay=1&loop=1`}
                         width="100%"
                         height="100%"
                         frameBorder="0"

@@ -5,6 +5,7 @@ import ProjectPage from './pages/ProjectPage';
 import ContactPage from './pages/ContactPage';
 import { projects } from './data/projects';
 import { useEffect } from 'react';
+import Footer from './components/Footer';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -26,6 +27,8 @@ function MasterView() {
   );
 }
 
+
+
 function App() {
   return (
     <>
@@ -35,12 +38,16 @@ function App() {
       <ScrollToTop />
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Navigate to="/director" replace />} />
-        <Route path="/project/:id" element={<ProjectPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/:category" element={<MasterView />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Navigate to="/director" replace />} />
+          <Route path="/project/:id" element={<ProjectPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/:category" element={<MasterView />} />
+        </Routes>
+      </main>
+
+      <Footer />
     </>
   );
 }

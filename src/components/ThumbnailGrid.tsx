@@ -42,7 +42,7 @@ export default function ThumbnailGrid({ projects }: Props) {
 
                             {/* Title on hover — opacity only, no color overlays */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                style={{ backgroundColor: 'rgba(5,5,5,0.5)' }}>
+                                style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
                                 <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-white font-['Inter'] text-center px-4">
                                     {project.title}
                                 </h3>
