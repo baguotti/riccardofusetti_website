@@ -215,5 +215,137 @@ export const projects: Project[] = [
             '/assets/projects/Moustache_Mike_MM_Gif.gif',
             '/assets/projects/Moustache_Mike_MM_Gif_Rain.gif'
         ]
+    },
+    {
+        id: 'editor-placeholder-1',
+        title: 'Project Placeholder // 01',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-2',
+        title: 'Project Placeholder // 02',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-3',
+        title: 'Project Placeholder // 03',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-4',
+        title: 'Project Placeholder // 04',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-5',
+        title: 'Project Placeholder // 05',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-6',
+        title: 'Project Placeholder // 06',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-7',
+        title: 'Project Placeholder // 07',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-8',
+        title: 'Project Placeholder // 08',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-9',
+        title: 'Project Placeholder // 09',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-10',
+        title: 'Project Placeholder // 10',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-11',
+        title: 'Project Placeholder // 11',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
+    },
+    {
+        id: 'editor-placeholder-12',
+        title: 'Project Placeholder // 12',
+        category: 'editor',
+        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
+        videoEmbedUrl: '',
+        year: '2025',
+        client: 'Placeholder',
+        description: 'Project in development.',
+        credits: []
     }
 ];

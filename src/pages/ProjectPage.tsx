@@ -243,7 +243,7 @@ export default function ProjectPage() {
                                 <button
                                     key={index}
                                     onClick={() => setSelectedImageIndex(index)}
-                                    className="w-full bg-black rounded-sm overflow-hidden border border-[#1A1A1A] cursor-pointer group/still outline-none focus:outline-none"
+                                    className="w-full bg-black rounded-[3px] overflow-hidden border border-[#1A1A1A] cursor-pointer group/still outline-none focus:outline-none"
                                 >
                                     <img
                                         src={img}

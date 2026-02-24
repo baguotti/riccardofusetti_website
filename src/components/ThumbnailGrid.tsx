@@ -28,12 +28,12 @@ export default function ThumbnailGrid({ projects }: Props) {
                     <Link
                         key={project.id}
                         to={`/project/${project.id}`}
-                        className="project-card group block relative rounded-sm aspect-video md:aspect-[4/5] lg:aspect-video"
+                        className="project-card group block relative rounded-[3px] aspect-video md:aspect-[4/5] lg:aspect-video"
                     >
                         {/* Ambience Glow Effect */}
                         <div className="absolute -inset-4 bg-white/5 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700 pointer-events-none" />
 
-                        <div className="absolute inset-0 overflow-hidden rounded-sm">
+                        <div className="absolute inset-0 overflow-hidden rounded-[3px]">
                             <img
                                 src={project.thumbnailUrl}
                                 alt={project.title}
