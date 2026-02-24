@@ -248,12 +248,21 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'editor-placeholder-3',
-        title: 'Project Placeholder // 03',
+        id: 'savagexfenty',
+        title: 'SAVAGE X FENTY Mens Loungewear',
         category: 'editor',
-        thumbnailUrl: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="450"%3E%3Crect width="800" height="450" fill="%230A0A0A"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" fill="%231A1A1A" font-family="monospace" font-size="20"%3ECOMING SOON%3C/text%3E%3C/svg%3E',
-        videoEmbedUrl: '',
-        credits: []
+        thumbnailUrl: '/assets/projects/savagexfenty_thumbnail.png',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1062813923',
+        credits: [
+            { role: 'Edit', name: 'Riccardo Fusetti' },
+            { role: 'Talent', name: 'Jasaya Neale, Marcus Stroman, Carlos Robson Gracie Jr.' },
+            { role: 'Directed by', name: '@scandebergs' },
+            { role: 'DOP', name: 'Pat Shahabian' },
+            { role: 'Post by', name: 'Wild Island Films' },
+            { role: 'Grade', name: 'Francis Qureshi' },
+            { role: 'Post Producer', name: 'Amy Bilsby' },
+            { role: 'Music', name: '@jsds.jsds.jsds' }
+        ]
     },
     {
         id: 'editor-placeholder-4',
