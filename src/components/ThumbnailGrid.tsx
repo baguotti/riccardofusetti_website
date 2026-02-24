@@ -23,17 +23,17 @@ export default function ThumbnailGrid({ projects }: Props) {
 
     return (
         <div ref={containerRef} className="w-full max-w-7xl mx-auto px-4 md:px-6 pb-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {projects.map((project) => (
                     <Link
                         key={project.id}
                         to={`/project/${project.id}`}
-                        className="project-card group block relative rounded-[3px] aspect-video md:aspect-[4/5] lg:aspect-video"
+                        className="project-card group block relative rounded-xl aspect-video md:aspect-[4/5] lg:aspect-video"
                     >
                         {/* Ambience Glow Effect */}
                         <div className="absolute -inset-4 bg-white/5 opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700 pointer-events-none" />
 
-                        <div className="absolute inset-0 overflow-hidden rounded-[3px]">
+                        <div className="absolute inset-0 overflow-hidden rounded-xl">
                             <img
                                 src={project.thumbnailUrl}
                                 alt={project.title}
