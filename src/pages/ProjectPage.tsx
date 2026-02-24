@@ -67,7 +67,7 @@ export default function ProjectPage() {
     if (!project) return <Navigate to="/" replace />;
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-[#050505] pt-24 pb-12 px-6 max-w-5xl mx-auto">
+        <div ref={containerRef} className="min-h-screen bg-black pt-24 pb-12 px-6 max-w-5xl mx-auto">
             <Link
                 ref={el => { contentRefs.current[0] = el; }}
                 to="/"
@@ -79,7 +79,7 @@ export default function ProjectPage() {
 
             <div
                 ref={el => { contentRefs.current[1] = el; }}
-                className="aspect-video w-full bg-[#050505] mb-12 rounded-xl overflow-hidden border border-[#1A1A1A] relative"
+                className="aspect-video w-full bg-black mb-12 rounded-xl overflow-hidden border border-[#1A1A1A] relative"
             >
                 {!isPlaying ? (
                     <button
@@ -243,7 +243,7 @@ export default function ProjectPage() {
                                 <button
                                     key={index}
                                     onClick={() => setSelectedImageIndex(index)}
-                                    className="w-full bg-[#050505] rounded-sm overflow-hidden border border-[#1A1A1A] cursor-pointer group/still outline-none focus:outline-none"
+                                    className="w-full bg-black rounded-sm overflow-hidden border border-[#1A1A1A] cursor-pointer group/still outline-none focus:outline-none"
                                 >
                                     <img
                                         src={img}
@@ -262,7 +262,7 @@ export default function ProjectPage() {
             {
                 selectedImageIndex !== null && project.gallery && (
                     <div
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-[#000000]/95 backdrop-blur-sm p-4 md:p-12 animate-in fade-in duration-300"
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 md:p-12 animate-in fade-in duration-300"
                         onClick={() => setSelectedImageIndex(null)}
                     >
                         <button
@@ -307,7 +307,7 @@ export default function ProjectPage() {
             {/* Poster Lightbox */}
             {isPosterOpen && project.posterUrl && (
                 <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#000000]/95 backdrop-blur-sm p-4 md:p-12 animate-in fade-in duration-300"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 md:p-12 animate-in fade-in duration-300"
                     onClick={() => setIsPosterOpen(false)}
                 >
                     <button

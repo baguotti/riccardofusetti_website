@@ -6,7 +6,6 @@ import ContactPage from './pages/ContactPage';
 import { projects } from './data/projects';
 import { useEffect } from 'react';
 
-// Scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -15,14 +14,13 @@ function ScrollToTop() {
   return null;
 }
 
-// The unified master view for project categories
 function MasterView() {
   const { category } = useParams<{ category: string }>();
   const activeCategory = category || 'director';
   const filteredProjects = projects.filter(p => p.category === activeCategory);
 
   return (
-    <div className="pt-12 flex flex-col relative z-10 bg-[#050505]">
+    <div className="pt-32">
       <ThumbnailGrid projects={filteredProjects} />
     </div>
   );
@@ -31,7 +29,7 @@ function MasterView() {
 function App() {
   return (
     <>
-      {/* Global CSS noise overlay for visual texture */}
+      {/* Noise texture overlay */}
       <div className="noise-overlay pointer-events-none"></div>
 
       <ScrollToTop />

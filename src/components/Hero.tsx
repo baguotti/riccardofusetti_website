@@ -19,7 +19,7 @@ export default function Hero() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-[#050505]">
+        <section ref={containerRef} className="relative h-[100dvh] w-full overflow-hidden bg-black">
             {/* Background with subtle architecture mood */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 shrink-0"
@@ -27,7 +27,7 @@ export default function Hero() {
             ></div>
 
             {/* Heavy unified black gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
 
             {/* Content layout pushed to bottom-left third */}
             <div className="relative h-full flex flex-col justify-end p-6 md:p-12 lg:p-20 pb-24 md:pb-32 w-full max-w-7xl mx-auto">
