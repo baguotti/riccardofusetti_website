@@ -2,8 +2,8 @@ import { Instagram, Mail } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="w-full px-6 pb-12 mt-12">
-            <div className="max-w-[440px] mx-auto border-t border-[#1A1A1A] pt-12 flex flex-col items-center gap-12">
+        <footer className="w-full px-6 pb-12 mt-4">
+            <div className="max-w-[440px] mx-auto flex flex-col items-center gap-8">
                 <div className="flex items-center gap-8">
                     <a
                         href="https://instagram.com/riccardo.fusetti"
