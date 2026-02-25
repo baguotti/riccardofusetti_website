@@ -6,6 +6,7 @@ export const projects: Project[] = [
         id: 'editorial-short',
         title: 'Editorial // Short Film',
         category: 'director',
+        projectType: 'Narrative',
         thumbnailUrl: '/assets/director/editorial-short/editorial-short_still_01.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/1069658930',
         year: '2024',
@@ -50,6 +51,7 @@ export const projects: Project[] = [
         id: 'motivational-short',
         title: 'Motivational // Short Film',
         category: 'director',
+        projectType: 'Narrative',
         thumbnailUrl: '/assets/director/motivational-short/motivational-short_thumbnail.jpg',
         posterUrl: '/assets/director/motivational-short/motivational-short_poster.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/915514135',
@@ -107,6 +109,7 @@ export const projects: Project[] = [
         id: 'generation-short',
         title: 'Generation // Short Film',
         category: 'director',
+        projectType: 'Narrative',
         thumbnailUrl: '/assets/director/generation-short/generation-short_still_01.jpg',
         posterUrl: '/assets/director/generation-short/generation-short_poster.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/750931199',
@@ -148,6 +151,7 @@ export const projects: Project[] = [
         id: 'deliverance',
         title: 'Hobbie Stuart // Deliverance',
         category: 'director',
+        projectType: 'Music Video',
         thumbnailUrl: '/assets/director/deliverance/deliverance_still_01.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/597116248',
         year: '2021',
@@ -177,6 +181,7 @@ export const projects: Project[] = [
         id: 'circus-of-bones',
         title: 'Circus of Bones // Una and the Lion',
         category: 'director',
+        projectType: 'Music Video',
         thumbnailUrl: '/assets/director/circus-of-bones/circus-of-bones_still_01.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/578480693',
         year: '2021',
@@ -198,6 +203,7 @@ export const projects: Project[] = [
         id: 'phobophobes',
         title: 'Phobophobes // Moustache Mike',
         category: 'director',
+        projectType: 'Music Video',
         thumbnailUrl: '/assets/director/phobophobes/phobophobes_still_01.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/455051917',
         year: '2018',
@@ -316,7 +322,7 @@ export const projects: Project[] = [
     },
     {
         id: 'glossier-ultralip',
-        title: 'GLOSSIER // ULTRALIP',
+        title: 'Glossier // Ultralip',
         category: 'editor',
         thumbnailUrl: '/assets/editor/glossier-ultralip/glossier-ultralip_thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661984905',
@@ -360,7 +366,7 @@ export const projects: Project[] = [
     },
     {
         id: 'cornerstone',
-        title: 'CORNERSTONE // TV COMMERCIAL',
+        title: 'Cornerstone // TV Commercial',
         category: 'editor',
         thumbnailUrl: '/assets/editor/cornerstone/cornerstone_thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/237764349',
@@ -382,6 +388,81 @@ export const projects: Project[] = [
             { role: 'Editor', name: 'Riccardo Fusetti' },
             { role: 'Directed by', name: 'Leo Wyndham and Eddie Wrey' },
             { role: 'Graded by', name: 'Art Post' }
+        ]
+    },
+    {
+        id: 'mr-porter-high-summer-25',
+        title: 'MR. Porter // High Summer 25',
+        category: 'editor',
+        thumbnailUrl: 'https://i.vimeocdn.com/video/2126327191-8570acb628ab3f5262812bbeae49dc737ed98e4a7e659a60674b8d5eb958e023-d?f=webp&region=us',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168093683?h=7108478a77',
+        credits: [
+            { role: 'Client', name: 'Mr. Porter', instagram: 'mrporter' },
+            { role: 'Director', name: 'Lizzie Jefferies', instagram: 'lizziejefferies' },
+            { role: 'DOP', name: 'Jack Reynolds', instagram: 'jackreynoldsdp' },
+            { role: 'Stylist', name: 'Hels Broadfoot', instagram: 'hels_broadfoot' },
+            { role: 'Art Director', name: 'Lizzy Cooney', instagram: 'lizzy.cooney' },
+            { role: 'Production', name: 'Es Robertson', instagram: 'es.robertson' },
+            { role: 'Production', name: 'Chloe van der Klaauw', instagram: 'chloevdklaauw' },
+            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+            { role: 'Edit', name: 'Wild Island Films', instagram: 'wildislandfilms' },
+            { role: 'Post-producer', name: 'Amy Bil', instagram: 'amybil' },
+            { role: 'Grade', name: 'Studio RM', instagram: 'studio__rm' },
+            { role: 'Talent', name: 'Limamu Mbaye', instagram: 'limamu_mbaye' },
+            { role: 'Net-A-Porter Team', name: 'Kaya Barron', instagram: 'kayabarron' },
+            { role: 'Net-A-Porter Team', name: 'Chiara Mestre', instagram: 'chiaramestre' }
+        ]
+    },
+    {
+        id: 'theory-25-campaign',
+        title: 'Theory // 25 Campaign',
+        category: 'editor',
+        thumbnailUrl: 'https://i.vimeocdn.com/video/2126328331-403e7da42f6f5213c12290b83c66e766ea2c29d3df9eeebcd6ed4734e158928f-d?f=webp&region=us',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168094521?h=b1ed13e118',
+        description: "Britt Lower and Calvin Royal III for Theory's Made in New York Campaign",
+        credits: [
+            { role: 'Talent', name: 'Britt Lower', instagram: 'brittle' },
+            { role: 'Talent', name: 'Calvin Royal III', instagram: 'calvinroyaliii' },
+            { role: 'Client', name: 'Theory', instagram: 'theory__' },
+            { role: 'Agency', name: 'Invisible Dynamics', instagram: '_invisibledynamics' },
+            { role: 'Production', name: 'Invisible Productions', instagram: '_invisibleproductions' },
+            { role: 'Director and Campaign Photographer', name: 'Joshua Woods', instagram: 'joshuawoods' },
+            { role: 'DOP', name: 'Kenny Sule', instagram: 'kennysule' },
+            { role: 'Stylist', name: 'Jasmine Hassett', instagram: 'jasminehassett' },
+            { role: 'Set Designer', name: 'Bethany Yeap' },
+            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+            { role: 'Grade', name: 'Cris Giribets', instagram: 'crisgiribets' },
+            { role: 'Post Producer', name: 'Jamie Wiff', instagram: 'jamiewiff' }
+        ]
+    },
+    {
+        id: 'bosideng-25',
+        title: 'Bosideng X Kim Jones AREAL // 25',
+        category: 'editor',
+        thumbnailUrl: 'https://i.vimeocdn.com/video/2126327740-8529439e38584bf3dd3e0c5dc029806fd3c123a9b5f88f9e16a568bd84a27825-d?f=webp&region=us',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168094091?h=4f5a4e55f5',
+        credits: [
+            { role: 'Creative Direction & Branding', name: 'DJA', instagram: 'dja_dj' },
+            { role: 'Photography', name: 'Willy Vanderperre', instagram: 'willyvanderperre' },
+            { role: 'Stylist', name: 'Olivier Rizzo', instagram: 'rizzo_olivier' },
+            { role: 'Talent', name: 'Anna Robinson', instagram: 'annarobinsonn' },
+            { role: 'Talent', name: 'Ruqi Jiang', instagram: 'ruiiqijiang' },
+            { role: 'Talent', name: 'Vincent Lacrocq', instagram: 'vincent_lacrocq' },
+            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+            { role: 'Grade', name: 'Francis Qureshi', instagram: 'francisqureshi' },
+            { role: 'Post Producer', name: 'Amy Bilsby', instagram: 'amybil' }
+        ]
+    },
+    {
+        id: 'harvey-nichols-xmas-25',
+        title: 'Harvey Nichols Xmas 25',
+        category: 'editor',
+        isVertical: true,
+        thumbnailUrl: '', // Will add later
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168095796?h=200734b769',
+        videoEmbedUrls: [
+            'https://player.vimeo.com/video/1168095796?h=200734b769',
+            'https://player.vimeo.com/video/1168095694?h=85eee64338'
         ]
     }
 ];

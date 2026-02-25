@@ -79,33 +79,49 @@ export default function ProjectPage() {
 
             <div
                 ref={el => { contentRefs.current[1] = el; }}
-                className="aspect-video w-full bg-primary mb-12 rounded-xl overflow-hidden border border-[#1A1A1A] relative"
+                className={`${project.isVertical ? "grid grid-cols-2 gap-4" : "aspect-video w-full border border-[#1A1A1A]"} mb-12 rounded-xl overflow-hidden relative`}
             >
                 {!isPlaying ? (
                     <button
                         onClick={() => setIsPlaying(true)}
-                        className="group relative w-full h-full flex items-center justify-center cursor-pointer overflow-hidden"
+                        className={`group relative w-full h-full flex items-center justify-center cursor-pointer overflow-hidden ${project.isVertical ? "aspect-[9/16] col-span-2 border border-[#1A1A1A] rounded-xl" : ""}`}
                     >
                         <div
-                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out"
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out brightness-[0.8] group-hover:brightness-100"
                             style={{ backgroundImage: `url(${project.thumbnailUrl})` }}
                         />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
-                        <div className="relative z-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-white group-hover:text-black">
-                            <Play size={24} fill="currentColor" />
+                        <div className="relative z-10 text-white opacity-60 transition-all duration-300 group-hover:scale-125 group-hover:opacity-100">
+                            <Play size={48} fill="currentColor" />
                         </div>
                     </button>
                 ) : (
-                    <iframe
-                        src={`${project.videoEmbedUrl}?autoplay=1&loop=1`}
-                        width="100%"
-                        height="100%"
-                        frameBorder="0"
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        title={project.title}
-                        className="w-full h-full"
-                    ></iframe>
+                    project.isVertical && project.videoEmbedUrls ? (
+                        project.videoEmbedUrls.map((url, index) => (
+                            <div key={index} className="aspect-[9/16] w-full bg-primary border border-[#1A1A1A] rounded-xl overflow-hidden">
+                                <iframe
+                                    src={`${url}&autoplay=1&loop=1`}
+                                    width="100%"
+                                    height="100%"
+                                    frameBorder="0"
+                                    allow="autoplay; fullscreen; picture-in-picture"
+                                    allowFullScreen
+                                    title={`${project.title} - Video ${index + 1}`}
+                                    className="w-full h-full"
+                                ></iframe>
+                            </div>
+                        ))
+                    ) : (
+                        <iframe
+                            src={`${project.videoEmbedUrl}?autoplay=1&loop=1`}
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowFullScreen
+                            title={project.title}
+                            className="w-full h-full"
+                        ></iframe>
+                    )
                 )}
             </div>
 
@@ -140,6 +156,12 @@ export default function ProjectPage() {
                                         <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
                                         <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
                                     </div>
+                                    {project.projectType && (
+                                        <div className="flex flex-col">
+                                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Project</h3>
+                                            <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.projectType}</p>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                             <div className="mb-8"></div>
@@ -240,6 +262,12 @@ export default function ProjectPage() {
                                 <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
                                 <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
                             </div>
+                            {project.projectType && (
+                                <div className="flex flex-col">
+                                    <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Project</h3>
+                                    <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.projectType}</p>
+                                </div>
+                            )}
                         </div>
 
                         {project.press && (

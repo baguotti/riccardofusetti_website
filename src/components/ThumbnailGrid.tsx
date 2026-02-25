@@ -37,12 +37,11 @@ export default function ThumbnailGrid({ projects }: Props) {
                             <img
                                 src={project.thumbnailUrl}
                                 alt={project.title}
-                                className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.02] group-hover:blur-[0.5px]"
+                                className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.005] group-hover:blur-[0.5px]"
                             />
 
-                            {/* Title on hover — opacity only, no color overlays */}
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+                            {/* Title on hover — extremely subtle frosted glass effect */}
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] bg-black/20">
                                 <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-white font-['Inter'] text-center px-4">
                                     {project.title}
                                 </h3>
