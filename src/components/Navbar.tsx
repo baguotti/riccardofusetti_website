@@ -42,7 +42,7 @@ export default function Navbar() {
 
                     <nav className="flex items-center gap-3 sm:gap-5 md:gap-8">
                         <NavLink to="/director" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Director</NavLink>
-                        <NavLink to="/photography" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Photography</NavLink>
+                        {/* <NavLink to="/photography" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Photography</NavLink> */}
                         <NavLink to="/editor" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Editor</NavLink>
                     </nav>
 

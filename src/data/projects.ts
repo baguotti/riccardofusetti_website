@@ -287,6 +287,61 @@ export const projects: Project[] = [
         ]
     },
     {
+        id: 'mr-porter-high-summer-25',
+        title: 'MR. Porter // High Summer 25',
+        category: 'editor',
+        thumbnailUrl: '/assets/editor/mr-porter-high-summer-25_thumbnail.webp',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168093683?h=7108478a77',
+        credits: [
+            { role: 'Client', name: 'Mr. Porter', instagram: 'mrporter' },
+            { role: 'Director', name: 'Lizzie Jefferies', instagram: 'lizziejefferies' },
+            { role: 'DOP', name: 'Jack Reynolds', instagram: 'jackreynoldsdp' },
+            { role: 'Stylist', name: 'Hels Broadfoot', instagram: 'hels_broadfoot' },
+            { role: 'Art Director', name: 'Lizzy Cooney', instagram: 'lizzy.cooney' },
+            { role: 'Production', name: 'Es Robertson', instagram: 'es.robertson' },
+            { role: 'Production', name: 'Chloe van der Klaauw', instagram: 'chloevdklaauw' },
+            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+            { role: 'Edit', name: 'Wild Island Films', instagram: 'wildislandfilms' },
+            { role: 'Post-producer', name: 'Amy Bil', instagram: 'amybil' },
+            { role: 'Grade', name: 'Studio RM', instagram: 'studio__rm' },
+            { role: 'Talent', name: 'Limamu Mbaye', instagram: 'limamu_mbaye' },
+            { role: 'Net-A-Porter Team', name: 'Kaya Barron', instagram: 'kayabarron' },
+            { role: 'Net-A-Porter Team', name: 'Chiara Mestre', instagram: 'chiaramestre' }
+        ]
+    },
+    {
+        id: 'harvey-nichols-xmas-25',
+        title: 'Harvey Nichols Xmas 25',
+        category: 'editor',
+        isVertical: true,
+        thumbnailUrl: '/assets/editor/harvey-nichols-xmas-25_thumbnail.webp',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168095796?h=200734b769',
+        videoEmbedUrls: [
+            'https://player.vimeo.com/video/1168095796?h=200734b769',
+            'https://player.vimeo.com/video/1168095694?h=85eee64338'
+        ],
+        videoThumbnails: [
+            '/assets/editor/harvey-nichols-h1_thumbnail.webp',
+            '/assets/editor/harvey-nichols-h2_thumbnail.webp'
+        ],
+        description: 'Christmas Countdown ⏰ 🎄 🔥',
+        credits: [
+            { role: 'Client', name: 'Harvey Nichols', instagram: 'harveynichols', url: 'https://www.instagram.com/harveynichols' },
+            { role: 'Edit - VFX - Art Direction', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti', url: 'https://www.instagram.com/riccardo.fusetti' },
+            { role: 'Directors', name: 'Fanny & Rory', instagram: 'fannyandrory', url: 'https://www.instagram.com/fannyandrory' },
+            { role: 'Creative', name: 'Assembly London', instagram: 'assemblylondon', url: 'https://www.instagram.com/assemblylondon' },
+            { role: 'Creative', name: 'Peter Hughes', instagram: 'peter_hughes', url: 'https://www.instagram.com/peter_hughes' },
+            { role: 'Production', name: 'Bellhouse', instagram: 'bellhouseltd', url: 'https://www.instagram.com/bellhouseltd' },
+            { role: 'Production', name: 'Esther Ettle', instagram: 'ettlepettle', url: 'https://www.instagram.com/ettlepettle' },
+            { role: 'Fashion', name: 'Kate Phelan', instagram: 'kphelan123', url: 'https://www.instagram.com/kphelan123' },
+            { role: 'Hair', name: 'Karim Belghiran', instagram: 'karimbelghiran', url: 'https://www.instagram.com/karimbelghiran' },
+            { role: 'Make-Up', name: 'Lauren Parsons', instagram: 'lauren.parsons', url: 'https://www.instagram.com/lauren.parsons' },
+            { role: 'Set', name: 'Jabez Bartlett', instagram: 'jabezbartlett', url: 'https://www.instagram.com/jabezbartlett' },
+            { role: 'Post', name: 'Wild Island Films', instagram: 'wildislandfilms', url: 'https://www.instagram.com/wildislandfilms' },
+            { role: 'Eq', name: 'MCX Films', instagram: 'mcx_films', url: 'https://www.instagram.com/mcx_films' }
+        ]
+    },
+    {
         id: 'nap-ss24',
         title: 'Net-A-Porter SS24',
         category: 'editor',
@@ -306,6 +361,28 @@ export const projects: Project[] = [
             { role: 'Colourist', name: '@francisqureshi' },
             { role: 'VFX', name: '@joshaeiffel' },
             { role: 'Composition & Mix', name: '@father_insta' }
+        ]
+    },
+    {
+        id: 'theory-25-campaign',
+        title: 'Theory // 25 Campaign',
+        category: 'editor',
+        thumbnailUrl: '/assets/editor/theory-25-campaign_thumbnail.webp',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168094521?h=b1ed13e118',
+        description: "Britt Lower and Calvin Royal III for Theory's Made in New York Campaign",
+        credits: [
+            { role: 'Talent', name: 'Britt Lower', instagram: 'brittle' },
+            { role: 'Talent', name: 'Calvin Royal III', instagram: 'calvinroyaliii' },
+            { role: 'Client', name: 'Theory', instagram: 'theory__' },
+            { role: 'Agency', name: 'Invisible Dynamics', instagram: '_invisibledynamics' },
+            { role: 'Production', name: 'Invisible Productions', instagram: '_invisibleproductions' },
+            { role: 'Director and Campaign Photographer', name: 'Joshua Woods', instagram: 'joshuawoods' },
+            { role: 'DOP', name: 'Kenny Sule', instagram: 'kennysule' },
+            { role: 'Stylist', name: 'Jasmine Hassett', instagram: 'jasminehassett' },
+            { role: 'Set Designer', name: 'Bethany Yeap' },
+            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+            { role: 'Grade', name: 'Cris Giribets', instagram: 'crisgiribets' },
+            { role: 'Post Producer', name: 'Jamie Wiffen', instagram: 'jamiewiff' }
         ]
     },
     {
@@ -329,6 +406,33 @@ export const projects: Project[] = [
         credits: [
             { role: 'Edit', name: 'Riccardo Fusetti @Wild Island Films' },
             { role: 'Director', name: 'Lea Colombo' }
+        ]
+    },
+    {
+        id: 'nike-top-surfers-2026',
+        title: 'NIKE - Top Surfers 2026',
+        category: 'editor',
+        thumbnailUrl: '/assets/editor/nike-top-surfers-2026_thumbnail.webp',
+        videoEmbedUrl: 'https://player.vimeo.com/video/1168503142?h=d4152e46d9',
+        description: 'Top Surfers for Nike and Nike Sportswear',
+        credits: [
+            { role: 'Photographer', name: 'Bolade Banjo', instagram: 'boladebanjo', url: 'https://www.instagram.com/boladebanjo' },
+            { role: 'Photographer', name: 'Edwin Delarosa', instagram: 'edwinism', url: 'https://www.instagram.com/edwinism' },
+            { role: 'Videography', name: 'Steven Jones', instagram: '24k.visuals_', url: 'https://www.instagram.com/24k.visuals_' },
+            { role: 'Videography', name: 'Jack Greer', instagram: 'iggy.nyc', url: 'https://www.instagram.com/iggy.nyc' },
+            { role: 'Music', name: 'Different Motion', instagram: '', url: '' },
+            { role: 'Music', name: 'Yg Teck', instagram: 'ygteck_noexcusez', url: 'https://www.instagram.com/ygteck_noexcusez' },
+            { role: 'Production Services', name: 'Counsel', instagram: 'wearecounsel', url: 'https://www.instagram.com/wearecounsel' },
+            { role: 'Something Special Studios', name: '@somethingspecialstudios', instagram: 'somethingspecialstudios', url: 'https://www.instagram.com/somethingspecialstudios' },
+            { role: 'Something Special Studios', name: 'M. Goldberg', instagram: 'm.goldberg', url: 'https://www.instagram.com/m.goldberg' },
+            { role: 'Something Special Studios', name: '@fizzzlyly', instagram: 'fizzzlyly', url: 'https://www.instagram.com/fizzzlyly' },
+            { role: 'Something Special Studios', name: 'Sammie Purulak', instagram: 'sammiepurulak', url: 'https://www.instagram.com/sammiepurulak' },
+            { role: 'Something Special Studios', name: '@chloesnowa', instagram: 'chloesnowa', url: 'https://www.instagram.com/chloesnowa' },
+            { role: 'Post', name: 'Wild Island Films', instagram: 'wildislandfilms', url: 'https://www.instagram.com/wildislandfilms' },
+            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti', url: 'https://www.instagram.com/riccardo.fusetti' },
+            { role: 'Edit', name: 'Orlando Cubitt', instagram: 'orlandocubitt', url: 'https://www.instagram.com/orlandocubitt' },
+            { role: 'Grade', name: 'Cristina Giribets', instagram: 'crisgiribets', url: 'https://www.instagram.com/crisgiribets' },
+            { role: 'Post Producer', name: 'Rob Farrelly', instagram: 'roobtubehq', url: 'https://www.instagram.com/roobtubehq' }
         ]
     },
     {
@@ -391,55 +495,10 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'mr-porter-high-summer-25',
-        title: 'MR. Porter // High Summer 25',
-        category: 'editor',
-        thumbnailUrl: 'https://i.vimeocdn.com/video/2126327191-8570acb628ab3f5262812bbeae49dc737ed98e4a7e659a60674b8d5eb958e023-d?f=webp&region=us',
-        videoEmbedUrl: 'https://player.vimeo.com/video/1168093683?h=7108478a77',
-        credits: [
-            { role: 'Client', name: 'Mr. Porter', instagram: 'mrporter' },
-            { role: 'Director', name: 'Lizzie Jefferies', instagram: 'lizziejefferies' },
-            { role: 'DOP', name: 'Jack Reynolds', instagram: 'jackreynoldsdp' },
-            { role: 'Stylist', name: 'Hels Broadfoot', instagram: 'hels_broadfoot' },
-            { role: 'Art Director', name: 'Lizzy Cooney', instagram: 'lizzy.cooney' },
-            { role: 'Production', name: 'Es Robertson', instagram: 'es.robertson' },
-            { role: 'Production', name: 'Chloe van der Klaauw', instagram: 'chloevdklaauw' },
-            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
-            { role: 'Edit', name: 'Wild Island Films', instagram: 'wildislandfilms' },
-            { role: 'Post-producer', name: 'Amy Bil', instagram: 'amybil' },
-            { role: 'Grade', name: 'Studio RM', instagram: 'studio__rm' },
-            { role: 'Talent', name: 'Limamu Mbaye', instagram: 'limamu_mbaye' },
-            { role: 'Net-A-Porter Team', name: 'Kaya Barron', instagram: 'kayabarron' },
-            { role: 'Net-A-Porter Team', name: 'Chiara Mestre', instagram: 'chiaramestre' }
-        ]
-    },
-    {
-        id: 'theory-25-campaign',
-        title: 'Theory // 25 Campaign',
-        category: 'editor',
-        thumbnailUrl: 'https://i.vimeocdn.com/video/2126328331-403e7da42f6f5213c12290b83c66e766ea2c29d3df9eeebcd6ed4734e158928f-d?f=webp&region=us',
-        videoEmbedUrl: 'https://player.vimeo.com/video/1168094521?h=b1ed13e118',
-        description: "Britt Lower and Calvin Royal III for Theory's Made in New York Campaign",
-        credits: [
-            { role: 'Talent', name: 'Britt Lower', instagram: 'brittle' },
-            { role: 'Talent', name: 'Calvin Royal III', instagram: 'calvinroyaliii' },
-            { role: 'Client', name: 'Theory', instagram: 'theory__' },
-            { role: 'Agency', name: 'Invisible Dynamics', instagram: '_invisibledynamics' },
-            { role: 'Production', name: 'Invisible Productions', instagram: '_invisibleproductions' },
-            { role: 'Director and Campaign Photographer', name: 'Joshua Woods', instagram: 'joshuawoods' },
-            { role: 'DOP', name: 'Kenny Sule', instagram: 'kennysule' },
-            { role: 'Stylist', name: 'Jasmine Hassett', instagram: 'jasminehassett' },
-            { role: 'Set Designer', name: 'Bethany Yeap' },
-            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
-            { role: 'Grade', name: 'Cris Giribets', instagram: 'crisgiribets' },
-            { role: 'Post Producer', name: 'Jamie Wiff', instagram: 'jamiewiff' }
-        ]
-    },
-    {
         id: 'bosideng-25',
         title: 'Bosideng X Kim Jones AREAL // 25',
         category: 'editor',
-        thumbnailUrl: 'https://i.vimeocdn.com/video/2126327740-8529439e38584bf3dd3e0c5dc029806fd3c123a9b5f88f9e16a568bd84a27825-d?f=webp&region=us',
+        thumbnailUrl: '/assets/editor/bosideng-25_thumbnail.webp',
         videoEmbedUrl: 'https://player.vimeo.com/video/1168094091?h=4f5a4e55f5',
         credits: [
             { role: 'Creative Direction & Branding', name: 'DJA', instagram: 'dja_dj' },
@@ -454,15 +513,13 @@ export const projects: Project[] = [
         ]
     },
     {
-        id: 'harvey-nichols-xmas-25',
-        title: 'Harvey Nichols Xmas 25',
+        id: 'matches-fashion',
+        title: 'Matches Fashion',
         category: 'editor',
-        isVertical: true,
-        thumbnailUrl: '', // Will add later
-        videoEmbedUrl: 'https://player.vimeo.com/video/1168095796?h=200734b769',
-        videoEmbedUrls: [
-            'https://player.vimeo.com/video/1168095796?h=200734b769',
-            'https://player.vimeo.com/video/1168095694?h=85eee64338'
+        thumbnailUrl: '/assets/editor/matches-fashion_thumbnail.webp',
+        videoEmbedUrl: 'https://player.vimeo.com/video/661988091?h=2740fddc5f',
+        credits: [
+            { role: 'Editor', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti', url: 'https://www.instagram.com/riccardo.fusetti' }
         ]
     }
 ];

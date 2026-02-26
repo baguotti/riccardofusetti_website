@@ -23,7 +23,7 @@ export default function Hero() {
             {/* Background with subtle architecture mood */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 shrink-0"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2400&auto=format&fit=crop")' }}
+                style={{ backgroundImage: 'url("/assets/hero-bg.jpg")' }}
             ></div>
 
             {/* Heavy unified primary gradient overlay */}

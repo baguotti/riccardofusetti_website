@@ -7,7 +7,7 @@ import { projects } from './data/projects';
 import { useEffect } from 'react';
 import Footer from './components/Footer';
 
-import PhotographyPage from './pages/PhotographyPage';
+// import PhotographyPage from './pages/PhotographyPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,7 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/director" replace />} />
           <Route path="/project/:id" element={<ProjectPage />} />
-          <Route path="/photography" element={<PhotographyPage />} />
+          {/* <Route path="/photography" element={<PhotographyPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/:category" element={<MasterView />} />
         </Routes>

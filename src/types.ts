@@ -16,8 +16,9 @@ export type Project = {
     category: 'director' | 'editor';
     projectType?: 'Narrative' | 'Music Video' | string;
     thumbnailUrl: string;
-    videoEmbedUrl: string;
+    videoEmbedUrl?: string;
     videoEmbedUrls?: string[];
+    videoThumbnails?: string[];
     isVertical?: boolean;
     year?: string;
     client?: string;
