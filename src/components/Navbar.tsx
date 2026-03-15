@@ -26,7 +26,7 @@ export default function Navbar() {
         <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none w-full flex justify-center px-6">
             <div
                 ref={navRef}
-                className={`pointer-events-auto relative flex items-center justify-between w-full md:w-auto px-3 md:px-5 py-2.5 md:py-3 rounded-[1.75rem] md:rounded-[2rem] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] overflow-hidden ${scrolled ? 'bg-primary/40 backdrop-blur-xl border border-[#1A1A1A] shadow-[0_0_25px_rgba(214,211,201,0.04)]' : 'bg-transparent backdrop-blur-none border border-transparent shadow-none'
+                className={`pointer-events-auto relative flex items-center justify-between w-full md:w-auto px-3 md:px-5 py-2.5 md:py-3 rounded-[1.75rem] md:rounded-[2rem] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] overflow-hidden ${scrolled ? 'bg-primary/40 backdrop-blur-xl border border-[#4A4A4A] shadow-[0_0_25px_rgba(214,211,201,0.04)]' : 'bg-transparent backdrop-blur-none border border-transparent shadow-none'
                     }`}
             >
                 {/* Noise Layer */}
@@ -48,7 +48,7 @@ export default function Navbar() {
 
                     <NavLink
                         to="/contact"
-                        className="group relative overflow-hidden flex-shrink-0 inline-flex items-center justify-center rounded-full bg-[#1A1A1A] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#D6D3C9] uppercase tracking-widest transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-105"
+                        className="group relative overflow-hidden flex-shrink-0 inline-flex items-center justify-center rounded-full bg-[#4A4A4A] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#D6D3C9] uppercase tracking-widest transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-105"
                     >
                         <span className="absolute inset-0 bg-[#D6D3C9] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></span>
                         <span className="relative z-10 group-hover:text-[#000000] transition-colors duration-300">Contact</span>

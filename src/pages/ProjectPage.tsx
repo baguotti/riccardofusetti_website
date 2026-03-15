@@ -71,7 +71,7 @@ export default function ProjectPage() {
             <Link
                 ref={el => { contentRefs.current[0] = el; }}
                 to="/"
-                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#1A1A1A] font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 mb-8"
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 mb-8"
             >
                 <ArrowLeft size={16} />
                 Back to Index
@@ -79,11 +79,11 @@ export default function ProjectPage() {
 
             <div
                 ref={el => { contentRefs.current[1] = el; }}
-                className={`${project.isVertical ? "grid grid-cols-2 gap-4 mb-16 md:mb-24" : "aspect-video w-full border border-[#1A1A1A] mb-12 rounded-xl overflow-hidden relative"}`}
+                className={`${project.isVertical ? "grid grid-cols-2 gap-4 mb-16 md:mb-24" : "aspect-video w-full border border-[#4A4A4A] mb-12 rounded-xl overflow-hidden relative"}`}
             >
                 {project.isVertical && project.videoEmbedUrls ? (
                     project.videoEmbedUrls.map((url, index) => (
-                        <div key={index} className="aspect-[4/5] w-full bg-primary border border-[#1A1A1A] rounded-xl overflow-hidden relative group/video">
+                        <div key={index} className="aspect-[4/5] w-full bg-primary border border-[#4A4A4A] rounded-xl overflow-hidden relative group/video">
                             {!isPlaying ? (
                                 <button
                                     onClick={() => setIsPlaying(true)}
@@ -164,16 +164,16 @@ export default function ProjectPage() {
                                 </div>
                                 <div className="hidden md:flex flex-col gap-4 shrink-0 pt-1">
                                     <div className="flex flex-col">
-                                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
+                                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-[2px]">Release</h3>
                                         <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
                                     </div>
                                     <div className="flex flex-col">
-                                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
+                                        <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-[2px]">Role</h3>
                                         <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
                                     </div>
                                     {project.projectType && (
                                         <div className="flex flex-col">
-                                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Project</h3>
+                                            <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-[2px]">Project</h3>
                                             <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.projectType}</p>
                                         </div>
                                     )}
@@ -183,21 +183,21 @@ export default function ProjectPage() {
 
                             {project.credits && (
                                 <div ref={el => { contentRefs.current[5] = el; }} className="mb-0">
-                                    <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Credits</h2>
+                                    <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] mb-6 border-b border-[#4A4A4A] pb-3">Credits</h2>
                                     <div className="flex flex-col gap-y-3">
                                         {project.credits.map((credit, i) => {
                                             if (project.id === 'motivational-short' && !showAllCredits && i > 5) return null;
                                             const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
 
                                             return (
-                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#1A1A1A]/50 pb-2">
-                                                    <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A] font-['Inter'] shrink-0">{credit.role}</span>
+                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#4A4A4A]/50 pb-2">
+                                                    <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] shrink-0">{credit.role}</span>
                                                     {link ? (
                                                         <a
                                                             href={link}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#1A1A1A] hover:decoration-[#D6D3C9]"
+                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
                                                         >
                                                             {credit.name}
                                                         </a>
@@ -232,19 +232,19 @@ export default function ProjectPage() {
                             </div>
                             {project.credits && project.credits.length > 0 && (
                                 <div className="flex-1 w-full md:max-w-md lg:max-w-lg md:mt-1">
-                                    <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Credits</h2>
+                                    <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] mb-6 border-b border-[#4A4A4A] pb-3">Credits</h2>
                                     <div className="flex flex-col gap-y-3">
                                         {project.credits.map((credit, i) => {
                                             const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
                                             return (
-                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#1A1A1A]/50 pb-2">
-                                                    <span className="text-[10px] uppercase tracking-widest text-[#1A1A1A] font-['Inter'] shrink-0">{credit.role}</span>
+                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#4A4A4A]/50 pb-2">
+                                                    <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] shrink-0">{credit.role}</span>
                                                     {link ? (
                                                         <a
                                                             href={link}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#1A1A1A] hover:decoration-[#D6D3C9]"
+                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
                                                         >
                                                             {credit.name}
                                                         </a>
@@ -265,21 +265,21 @@ export default function ProjectPage() {
                 {project.category === 'director' && (
                     <div
                         ref={el => { contentRefs.current[4] = el; }}
-                        className="md:border-l border-[#1A1A1A] md:pl-8 pt-8 md:pt-0 flex flex-col h-fit md:sticky md:top-24"
+                        className="md:border-l border-[#4A4A4A] md:pl-8 pt-8 md:pt-0 flex flex-col h-fit md:sticky md:top-24"
                     >
                         {/* Mobile-only Release & Role (hidden on desktop since they're next to title) */}
                         <div className="flex flex-col gap-4 md:hidden mb-8">
                             <div className="flex flex-col">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Release</h3>
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-[2px]">Release</h3>
                                 <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm pt-[2px]">{project.year}</p>
                             </div>
                             <div className="flex flex-col">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Role</h3>
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-[2px]">Role</h3>
                                 <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.category}</p>
                             </div>
                             {project.projectType && (
                                 <div className="flex flex-col">
-                                    <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-[2px]">Project</h3>
+                                    <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-[2px]">Project</h3>
                                     <p className="font-['Inter'] font-light text-[#FFFFFF] text-sm uppercase tracking-widest pt-[2px]">{project.projectType}</p>
                                 </div>
                             )}
@@ -287,7 +287,7 @@ export default function ProjectPage() {
 
                         {project.press && (
                             <div className="flex flex-col gap-4 mt-1">
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Press & Awards</h3>
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-3">Press & Awards</h3>
                                 <div className="space-y-4">
                                     {project.press.map((link, i) => (
                                         <a
@@ -306,7 +306,7 @@ export default function ProjectPage() {
 
                         {project.posterUrl && (
                             <div className={`flex flex-col gap-4 ${project.press && project.press.length > 0 ? 'mt-12' : 'mt-1'}`}>
-                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] border-b border-[#1A1A1A] pb-3">Poster</h3>
+                                <h3 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] border-b border-[#4A4A4A] pb-3">Poster</h3>
                                 <div
                                     className="overflow-hidden rounded-lg cursor-pointer group/poster relative"
                                     onClick={() => setIsPosterOpen(true)}
@@ -327,13 +327,13 @@ export default function ProjectPage() {
             {
                 project.category === 'director' && project.gallery && project.gallery.length > 0 && (
                     <div className="mt-8">
-                        <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#1A1A1A] font-['Inter'] mb-6 border-b border-[#1A1A1A] pb-3">Gallery</h2>
+                        <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] mb-6 border-b border-[#4A4A4A] pb-3">Gallery</h2>
                         <div className={`grid gap-1 md:gap-2 ${project.gallery.length === 2 || project.gallery.length === 4 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-3'}`}>
                             {project.gallery.map((img, index) => (
                                 <button
                                     key={index}
                                     onClick={() => setSelectedImageIndex(index)}
-                                    className="w-full bg-primary rounded-[3px] overflow-hidden border border-[#1A1A1A] cursor-pointer group/still outline-none focus:outline-none"
+                                    className="w-full bg-primary rounded-[3px] overflow-hidden border border-[#4A4A4A] cursor-pointer group/still outline-none focus:outline-none"
                                 >
                                     <img
                                         src={img}

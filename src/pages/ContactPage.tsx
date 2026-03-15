@@ -29,8 +29,8 @@ export default function ContactPage() {
                 <div ref={contentRef} className="space-y-16">
                     {/* Header Label */}
                     <div className="flex items-center gap-4">
-                        <span className="w-8 h-[1px] bg-[#1A1A1A]" />
-                        <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#333] font-['JetBrains_Mono']">
+                        <span className="w-8 h-[1px] bg-[#4A4A4A]" />
+                        <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#4A4A4A] font-['JetBrains_Mono']">
                             Info / Contact
                         </h2>
                     </div>
@@ -49,11 +49,11 @@ export default function ContactPage() {
                     {/* Representation */}
                     <div className="space-y-4 font-['Inter'] text-[11px] uppercase tracking-[0.2em] text-[#888]">
                         <div className="flex flex-col gap-1">
-                            <span className="text-[#333] text-[9px] tracking-widest mb-1">Director Representation</span>
+                            <span className="text-[#4A4A4A] text-[9px] tracking-widest mb-1">Director Representation</span>
                             <p className="text-white">DADBOD FILMS (Non-Exclusive)</p>
                         </div>
                         <div className="flex flex-col gap-1">
-                            <span className="text-[#333] text-[9px] tracking-widest mb-1">Editor Roster</span>
+                            <span className="text-[#4A4A4A] text-[9px] tracking-widest mb-1">Editor Roster</span>
                             <a
                                 href="https://wildislandfilms.com/"
                                 target="_blank"
@@ -69,13 +69,13 @@ export default function ContactPage() {
                     <div className="pt-8">
                         <a
                             href="mailto:fusetti.riccardo@gmail.com"
-                            className="group relative overflow-hidden inline-block w-full border border-[#1A1A1A] px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9] rounded-2xl"
+                            className="group relative overflow-hidden inline-block w-full border border-[#4A4A4A] px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9] rounded-2xl"
                         >
                             {/* Sliding Background */}
                             <span className="absolute inset-x-0 bottom-0 h-0 bg-[#D6D3C9] transition-all duration-500 ease-out group-hover:h-full"></span>
 
                             <div className="relative z-10 flex flex-col items-center gap-2">
-                                <span className="text-[9px] text-[#444] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-300">
+                                <span className="text-[9px] text-[#4A4A4A] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-300">
                                     Get in touch
                                 </span>
                                 <span className="text-sm text-white font-['JetBrains_Mono'] group-hover:text-black transition-colors duration-300">
@@ -84,10 +84,10 @@ export default function ContactPage() {
                             </div>
 
                             {/* Corner Accents */}
-                            <span className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tl-xl" />
-                            <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tr-xl" />
-                            <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-bl-xl" />
-                            <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#1A1A1A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-br-xl" />
+                            <span className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#4A4A4A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tl-xl" />
+                            <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#4A4A4A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tr-xl" />
+                            <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#4A4A4A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-bl-xl" />
+                            <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#4A4A4A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-br-xl" />
                         </a>
                     </div>
 
