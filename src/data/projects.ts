@@ -249,7 +249,15 @@ export const projects: Project[] = [
         thumbnailUrl: '/assets/editor/glossier-you/glossier-you_thumbnail.png',
         videoEmbedUrl: 'https://player.vimeo.com/video/1016249812',
         credits: [
-            { role: 'Editor/ Sound design', name: 'Riccardo Fusetti' },
+            { role: 'Editor / Sound design', name: 'Riccardo Fusetti (@riccardo.fusetti)' },
+            { role: 'Director', name: '@mitchryan' },
+            { role: 'DoP', name: 'Sean Price Williams' },
+            { role: 'Edit assist', name: '@crab__abble' },
+            { role: 'Colourist', name: '@francisqureshi' },
+            { role: 'Post producer', name: '@amybil' },
+            { role: 'Talent', name: '@devonleecarlson, @sydneylynncarlson, @_essencetaylor, @milanonasu, @alizzfromwonderland' },
+            { role: 'Music', name: 'Taul Katz @__tool__' },
+            { role: 'Glossier team', name: '@aaronkurlander, @isioma.i, @fizzzlyly, @marie_suter, @taylortindall' },
             { role: 'Production Company', name: 'Wild Island Films' }
         ]
     },

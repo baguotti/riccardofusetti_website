@@ -185,28 +185,51 @@ export default function ProjectPage() {
                                 <div ref={el => { contentRefs.current[5] = el; }} className="mb-0">
                                     <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] mb-6 border-b border-[#4A4A4A] pb-3">Credits</h2>
                                     <div className="flex flex-col gap-y-3">
-                                        {project.credits.map((credit, i) => {
-                                            if (project.id === 'motivational-short' && !showAllCredits && i > 5) return null;
-                                            const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
+                                    {project.credits.map((credit, i) => {
+                                        if (project.id === 'motivational-short' && !showAllCredits && i > 5) return null;
+                                        const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
 
-                                            return (
-                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#4A4A4A]/50 pb-2">
-                                                    <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] shrink-0">{credit.role}</span>
-                                                    {link ? (
+                                        const renderName = (name: string) => {
+                                            const parts = name.split(/(@[\w._]+)/g);
+                                            return parts.map((part, index) => {
+                                                if (part.startsWith('@')) {
+                                                    const handle = part.substring(1);
+                                                    return (
                                                         <a
-                                                            href={link}
+                                                            key={index}
+                                                            href={`https://instagram.com/${handle}`}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
+                                                            className="hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
                                                         >
-                                                            {credit.name}
+                                                            {part}
                                                         </a>
-                                                    ) : (
-                                                        <span className="text-xs text-[#FFFFFF] text-right font-['Inter']">{credit.name}</span>
-                                                    )}
-                                                </div>
-                                            );
-                                        })}
+                                                    );
+                                                }
+                                                return part;
+                                            });
+                                        };
+
+                                        return (
+                                            <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#4A4A4A]/50 pb-2">
+                                                <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] shrink-0">{credit.role}</span>
+                                                {link ? (
+                                                    <a
+                                                        href={link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
+                                                    >
+                                                        {credit.name}
+                                                    </a>
+                                                ) : (
+                                                    <span className="text-xs text-[#FFFFFF] text-right font-['Inter'] leading-relaxed">
+                                                        {renderName(credit.name)}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        );
+                                    })}
                                     </div>
                                     {project.id === 'motivational-short' && project.credits.length > 6 && (
                                         <button
@@ -234,26 +257,50 @@ export default function ProjectPage() {
                                 <div className="flex-1 w-full md:max-w-md lg:max-w-lg md:mt-1">
                                     <h2 className="text-[10px] uppercase tracking-[0.2em] text-[#4A4A4A] font-['Inter'] mb-6 border-b border-[#4A4A4A] pb-3">Credits</h2>
                                     <div className="flex flex-col gap-y-3">
-                                        {project.credits.map((credit, i) => {
-                                            const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
-                                            return (
-                                                <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#4A4A4A]/50 pb-2">
-                                                    <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] shrink-0">{credit.role}</span>
-                                                    {link ? (
-                                                        <a
-                                                            href={link}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
-                                                        >
-                                                            {credit.name}
-                                                        </a>
-                                                    ) : (
-                                                        <span className="text-xs text-[#FFFFFF] text-right font-['Inter']">{credit.name}</span>
-                                                    )}
-                                                </div>
-                                            );
-                                        })}
+                                {project.credits.map((credit, i) => {
+                                    const link = credit.url || (credit.instagram ? `https://instagram.com/${credit.instagram}` : null);
+                                    
+                                    const renderName = (name: string) => {
+                                        const parts = name.split(/(@[\w._]+)/g);
+                                        return parts.map((part, index) => {
+                                            if (part.startsWith('@')) {
+                                                const handle = part.substring(1);
+                                                return (
+                                                    <a
+                                                        key={index}
+                                                        href={`https://instagram.com/${handle}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
+                                                    >
+                                                        {part}
+                                                    </a>
+                                                );
+                                            }
+                                            return part;
+                                        });
+                                    };
+
+                                    return (
+                                        <div key={i} className="flex justify-between items-baseline gap-4 border-b border-[#4A4A4A]/50 pb-2">
+                                            <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] shrink-0">{credit.role}</span>
+                                            {link ? (
+                                                <a
+                                                    href={link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-xs text-[#FFFFFF] text-right font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 underline underline-offset-4 decoration-[#4A4A4A] hover:decoration-[#D6D3C9]"
+                                                >
+                                                    {credit.name}
+                                                </a>
+                                            ) : (
+                                                <span className="text-xs text-[#FFFFFF] text-right font-['Inter'] leading-relaxed">
+                                                    {renderName(credit.name)}
+                                                </span>
+                                            )}
+                                        </div>
+                                    );
+                                })}
                                     </div>
                                 </div>
                             )}
