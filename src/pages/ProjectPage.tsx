@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Navigate, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Play, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -25,6 +25,27 @@ export default function ProjectPage() {
     const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
     const [isPosterOpen, setIsPosterOpen] = useState(false);
     const [showAllCredits, setShowAllCredits] = useState(false);
+    const [showPasswordForm, setShowPasswordForm] = useState(false);
+    const [passwordInput, setPasswordInput] = useState('');
+    const navigate = useNavigate();
+    const enterBtnRef = useRef<HTMLButtonElement>(null);
+
+    const handlePasswordSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (project?.privateData && passwordInput.trim()) {
+            if (passwordInput.trim() === project.privateData.token) {
+                navigate(`/project/${id}/assets/${passwordInput.trim()}`);
+            } else {
+                if (enterBtnRef.current) {
+                    gsap.to(enterBtnRef.current, {
+                        x: [-4, 4, -4, 4, 0],
+                        duration: 0.4,
+                        ease: "power1.inOut"
+                    });
+                }
+            }
+        }
+    };
 
     const handleNext = (e?: React.MouseEvent) => {
         e?.stopPropagation();
@@ -394,6 +415,38 @@ export default function ProjectPage() {
                     </div>
                 )
             }
+
+            {/* Private Access Link */}
+            {project.category === 'director' && project.privateData && (
+                <div className="mt-24 mb-12 flex justify-center">
+                    {!showPasswordForm ? (
+                        <button 
+                            onClick={() => setShowPasswordForm(true)}
+                            className="text-[9px] text-[#FFFFFF]/[0.04] hover:text-[#FFFFFF]/[0.15] transition-colors duration-500 uppercase tracking-[0.2em] font-['Inter'] cursor-pointer"
+                        >
+                            Password protected project link
+                        </button>
+                    ) : (
+                        <form onSubmit={handlePasswordSubmit} className="flex items-center gap-3 animate-in fade-in duration-500">
+                            <input 
+                                type="password" 
+                                value={passwordInput}
+                                onChange={(e) => setPasswordInput(e.target.value)}
+                                placeholder="PASSWORD..."
+                                className="bg-transparent border-b border-transparent focus:border-[#FFFFFF]/[0.15] text-[9px] text-[#FFFFFF]/[0.15] font-['Inter'] px-2 py-1 outline-none w-48 text-center transition-colors uppercase tracking-[0.2em] placeholder:text-[#FFFFFF]/[0.04]"
+                                autoFocus
+                            />
+                            <button 
+                                ref={enterBtnRef}
+                                type="submit" 
+                                className="text-[9px] text-[#FFFFFF]/[0.04] uppercase tracking-[0.2em] hover:text-[#FFFFFF]/[0.15] transition-colors cursor-pointer"
+                            >
+                                Enter
+                            </button>
+                        </form>
+                    )}
+                </div>
+            )}
 
             {/* Lightbox Overlay */}
             {

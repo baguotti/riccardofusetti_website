@@ -45,7 +45,20 @@ export const projects: Project[] = [
             '/assets/director/editorial-short/editorial-short_still_15.png',
             '/assets/director/editorial-short/editorial-short_still_16.png'
         ],
-        posterUrl: '/assets/director/editorial-short/editorial-short_poster.jpg'
+        posterUrl: '/assets/director/editorial-short/editorial-short_poster.jpg',
+        privateData: {
+            token: 'projectpage',
+            assets: [
+                {
+                    id: 'treatment',
+                    title: 'Director\'s Treatment',
+                    type: 'pdf',
+                    url: 'https://indd.adobe.com/view/e1511376-a18c-4246-bdb2-610d4ccc6696',
+                    embedUrl: 'https://indd.adobe.com/view/e1511376-a18c-4246-bdb2-610d4ccc6696',
+                    description: 'Original pitch deck and visual references.'
+                }
+            ]
+        }
     },
     {
         id: 'motivational-short',
@@ -103,7 +116,36 @@ export const projects: Project[] = [
             '/assets/director/motivational-short/motivational-short_still_04.png',
             '/assets/director/motivational-short/motivational-short_still_05.png',
             '/assets/director/motivational-short/motivational-short_still_06.png'
-        ]
+        ],
+        privateData: {
+            token: 'projectpage',
+            assets: [
+                {
+                    id: 'treatment',
+                    title: 'Director\'s Treatment',
+                    type: 'pdf',
+                    url: '/assets/director/motivational-short/private/Motivational_Treatment_V7.0.pdf',
+                    embedUrl: '/assets/director/motivational-short/private/Motivational_Treatment_V7.0.pdf',
+                    description: 'Original pitch deck and visual references.'
+                },
+                {
+                    id: 'animatic',
+                    title: 'Animatic',
+                    type: 'video',
+                    embedUrl: 'https://drive.google.com/file/d/1SInnFsgbBl78r9iDZJxHCrncU-Ny0roj/preview',
+                    thumbnailUrl: '/assets/director/motivational-short/private/motivational_animatic_thumb.webp',
+                    description: 'Early animatic.'
+                },
+                {
+                    id: 'script',
+                    title: 'Script',
+                    type: 'pdf',
+                    url: '/assets/director/motivational-short/private/Motivational_Script.pdf',
+                    embedUrl: '/assets/director/motivational-short/private/Motivational_Script.pdf',
+                    description: 'Shooting script.'
+                }
+            ]
+        }
     },
     {
         id: 'generation-short',
@@ -145,7 +187,20 @@ export const projects: Project[] = [
             '/assets/director/generation-short/generation-short_still_05.png',
             '/assets/director/generation-short/generation-short_still_06.png',
             '/assets/director/generation-short/generation-short_still_07.png'
-        ]
+        ],
+        privateData: {
+            token: 'projectpage',
+            assets: [
+                {
+                    id: 'treatment',
+                    title: 'Director\'s Treatment',
+                    type: 'pdf',
+                    url: '/assets/director/generation-short/private/Generation_Treatment_v8.pdf',
+                    embedUrl: '/assets/director/generation-short/private/Generation_Treatment_v8.pdf',
+                    description: 'Original pitch deck and visual references.'
+                }
+            ]
+        }
     },
     {
         id: 'deliverance',

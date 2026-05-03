@@ -2,6 +2,7 @@ import { Routes, Route, useLocation, Navigate, useParams } from 'react-router-do
 import Navbar from './components/Navbar';
 import ThumbnailGrid from './components/ThumbnailGrid';
 import ProjectPage from './pages/ProjectPage';
+import PrivateProjectPage from './pages/PrivateProjectPage';
 import ContactPage from './pages/ContactPage';
 import { projects } from './data/projects';
 import { useEffect } from 'react';
@@ -44,6 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/director" replace />} />
           <Route path="/project/:id" element={<ProjectPage />} />
+          <Route path="/project/:id/assets/:token" element={<PrivateProjectPage />} />
           {/* <Route path="/photography" element={<PhotographyPage />} /> */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/:category" element={<MasterView />} />

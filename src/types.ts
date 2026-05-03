@@ -10,6 +10,22 @@ export type PressLink = {
     url: string;
 };
 
+export type PrivateAsset = {
+    id: string;
+    title: string;
+    type: 'video' | 'pdf' | 'gallery';
+    url?: string;
+    urls?: string[];
+    embedUrl?: string;
+    thumbnailUrl?: string;
+    description?: string;
+};
+
+export type PrivateSection = {
+    token: string;
+    assets: PrivateAsset[];
+};
+
 export type Project = {
     id: string;
     title: string;
@@ -27,4 +43,5 @@ export type Project = {
     press?: PressLink[];
     gallery?: string[];
     posterUrl?: string;
+    privateData?: PrivateSection;
 };
