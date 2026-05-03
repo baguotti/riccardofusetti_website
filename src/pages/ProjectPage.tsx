@@ -38,7 +38,9 @@ export default function ProjectPage() {
             } else {
                 if (enterBtnRef.current) {
                     gsap.to(enterBtnRef.current, {
-                        x: [-4, 4, -4, 4, 0],
+                        keyframes: [
+                            { x: -4 }, { x: 4 }, { x: -4 }, { x: 4 }, { x: 0 }
+                        ],
                         duration: 0.4,
                         ease: "power1.inOut"
                     });
