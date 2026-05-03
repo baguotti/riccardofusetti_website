@@ -26,7 +26,9 @@ export const projects: Project[] = [
         press: [
             { label: "Director's Notes Premiere and Interview", url: 'https://directorsnotes.com/2025/04/08/riccardo-fusetti-editorial/' },
             { label: 'Runway AIFF 2025 - Official Selection', url: 'https://aiff.runwayml.com/' },
-            { label: 'BIFAN 2025 - Bucheon International Fantastic Film Festival', url: 'https://www.bifan.kr/eng/program/program_view.asp?pk_seq=8023' }
+            { label: 'BIFAN 2025 - Bucheon International Fantastic Film Festival', url: 'https://www.bifan.kr/eng/bifan/history_program_view.asp?sc_category1=&sc_year=2025&pk_seq=8023' },
+            { label: 'IMDb', url: 'https://www.imdb.com/title/tt36543355/?ref_=nm_knf_t_3' },
+            { label: 'Letterboxd', url: 'https://letterboxd.com/film/editorial-2025/' }
         ],
         gallery: [
             '/assets/director/editorial-short/editorial-short_still_02.png',
@@ -117,6 +119,9 @@ export const projects: Project[] = [
             '/assets/director/motivational-short/motivational-short_still_05.png',
             '/assets/director/motivational-short/motivational-short_still_06.png'
         ],
+        press: [
+            { label: 'Minute Shorts Premiere', url: 'https://www.minuteshorts.co.uk/film_player/motivational' }
+        ],
         privateData: {
             token: 'projectpage',
             assets: [
@@ -178,7 +183,9 @@ export const projects: Project[] = [
             { label: 'Short Of The Week', url: 'https://www.shortoftheweek.com/2022/09/22/generation/' },
             { label: 'Directors Notes Interview', url: 'https://directorsnotes.com/2022/10/07/riccardo-fusetti-generation/' },
             { label: 'Shots.net article', url: 'https://www.shots.net/news/view/life-the-universe-and-everything-in-120-seconds' },
-            { label: 'Stash', url: 'https://www.stashmedia.tv/generation-short-film-by-riccardo-fusetti/' }
+            { label: 'Stash', url: 'https://www.stashmedia.tv/generation-short-film-by-riccardo-fusetti/' },
+            { label: 'IMDb', url: 'https://www.imdb.com/title/tt22248710/?ref_=nm_ov_bio_lk' },
+            { label: 'Letterboxd', url: 'https://letterboxd.com/film/generation-2022/' }
         ],
         gallery: [
             '/assets/director/generation-short/generation-short_still_02.png',
