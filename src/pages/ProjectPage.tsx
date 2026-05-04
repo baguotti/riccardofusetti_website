@@ -122,7 +122,7 @@ export default function ProjectPage() {
                                 </button>
                             ) : (
                                 <iframe
-                                    src={`${url}${url.includes('?') ? '&' : '?'}autoplay=1&loop=1`}
+                                    src={`${url}${url.includes('?') ? '&' : '?'}autoplay=1&controls=1&title=0&byline=0&portrait=0`}
                                     width="100%"
                                     height="100%"
                                     frameBorder="0"
@@ -150,7 +150,7 @@ export default function ProjectPage() {
                         </button>
                     ) : (
                         <iframe
-                            src={`${project.videoEmbedUrl}${project.videoEmbedUrl?.includes('?') ? '&' : '?'}autoplay=1&loop=1`}
+                            src={`${project.videoEmbedUrl}${project.videoEmbedUrl?.includes('?') ? '&' : '?'}autoplay=1&controls=1&title=0&byline=0&portrait=0`}
                             width="100%"
                             height="100%"
                             frameBorder="0"

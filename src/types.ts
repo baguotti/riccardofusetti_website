@@ -36,6 +36,7 @@ export type Project = {
     videoEmbedUrls?: string[];
     videoThumbnails?: string[];
     isVertical?: boolean;
+    posterThumbUrl?: string;
     year?: string;
     client?: string;
     description?: string;
