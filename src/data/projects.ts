@@ -317,16 +317,24 @@ export const projects: Project[] = [
     thumbnailUrl: '/assets/editor/glossier-you/glossier-you_thumbnail.webp',
     videoEmbedUrl: 'https://player.vimeo.com/video/1016249812',
     credits: [
-        { role: 'Editor / Sound design', name: 'Riccardo Fusetti (@riccardo.fusetti)' },
-        { role: 'Director', name: '@mitchryan' },
+        { role: 'Editor / Sound design', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+        { role: 'Director', name: 'Mitch Ryan', instagram: 'mitchryan' },
         { role: 'DoP', name: 'Sean Price Williams' },
-        { role: 'Edit assist', name: '@crab__abble' },
-        { role: 'Colourist', name: '@francisqureshi' },
-        { role: 'Post producer', name: '@amybil' },
-        { role: 'Talent', name: '@devonleecarlson, @sydneylynncarlson, @_essencetaylor, @milanonasu, @alizzfromwonderland' },
-        { role: 'Music', name: 'Taul Katz @__tool__' },
-        { role: 'Glossier team', name: '@aaronkurlander, @isioma.i, @fizzzlyly, @marie_suter, @taylortindall' },
-        { role: 'Production Company', name: 'Wild Island Films' }
+        { role: 'Edit assist', name: 'Crab Abble', instagram: 'crab__abble' },
+        { role: 'Colourist', name: 'Francis Qureshi', instagram: 'francisqureshi' },
+        { role: 'Post producer', name: 'Amy Bilsby', instagram: 'amybil' },
+        { role: 'Talent', name: 'Devon Lee Carlson', instagram: 'devonleecarlson' },
+        { role: 'Talent', name: 'Sydney Lynn Carlson', instagram: 'sydneylynncarlson' },
+        { role: 'Talent', name: 'Essence Taylor', instagram: '_essencetaylor' },
+        { role: 'Talent', name: 'Milano Nasu', instagram: 'milanonasu' },
+        { role: 'Talent', name: 'Aliz Menyhert', instagram: 'alizzfromwonderland' },
+        { role: 'Music', name: 'Taul Katz', instagram: '__tool__' },
+        { role: 'Glossier team', name: 'Aaron Kurlander', instagram: 'aaronkurlander' },
+        { role: 'Glossier team', name: 'Isioma Iyamah', instagram: 'isioma.i' },
+        { role: 'Glossier team', name: 'Lizzy Freedman', instagram: 'fizzzlyly' },
+        { role: 'Glossier team', name: 'Marie Suter', instagram: 'marie_suter' },
+        { role: 'Glossier team', name: 'Taylor Tindall', instagram: 'taylortindall' },
+        { role: 'Production Company', name: 'Wild Island Films', instagram: 'wildislandfilms' }
     ]
     },
     {
@@ -338,12 +346,12 @@ export const projects: Project[] = [
         credits: [
             { role: 'Edit', name: 'Riccardo Fusetti' },
             { role: 'Talent', name: 'Jasaya Neale, Marcus Stroman, Carlos Robson Gracie Jr.' },
-            { role: 'Directed by', name: '@scandebergs' },
+            { role: 'Directed by', name: 'Scandebergs', instagram: 'scandebergs' },
             { role: 'DOP', name: 'Pat Shahabian' },
-            { role: 'Post by', name: 'Wild Island Films' },
-            { role: 'Grade', name: 'Francis Qureshi' },
-            { role: 'Post Producer', name: 'Amy Bilsby' },
-            { role: 'Music', name: '@jsds.jsds.jsds' }
+            { role: 'Post by', name: 'Wild Island Films', instagram: 'wildislandfilms' },
+            { role: 'Grade', name: 'Francis Qureshi', instagram: 'francisqureshi' },
+            { role: 'Post Producer', name: 'Amy Bilsby', instagram: 'amybil' },
+            { role: 'Music', name: 'JSDS', instagram: 'jsds.jsds.jsds' }
         ]
     },
     {
@@ -423,19 +431,20 @@ export const projects: Project[] = [
         thumbnailUrl: '/assets/editor/nap-ss24/nap-ss24_thumbnail.webp',
         videoEmbedUrl: 'https://player.vimeo.com/video/933781681',
         credits: [
-            { role: 'Editor', name: '@riccardo.fusetti' },
-            { role: 'Featuring', name: '@adutakech' },
-            { role: 'Director', name: '@drewvickers' },
-            { role: 'Video Commissioning Director', name: '@lizziejefferies' },
-            { role: 'DOP', name: '@theodorehugonnier' },
-            { role: 'Stylist', name: '@bojana_kozarevic' },
-            { role: 'Art Direction', name: '@chiaramestre, @kerry_heaphy' },
-            { role: 'Post Producer', name: '@priscilanava' },
-            { role: 'Net-A-Porter Team', name: '@kayabarron, @alcaselyhayford, @es.robertson, @gabsylvia, @erinshanahan' },
-            { role: 'Post Production', name: '@wildislandfilms, @amybil' },
-            { role: 'Colourist', name: '@francisqureshi' },
-            { role: 'VFX', name: '@joshaeiffel' },
-            { role: 'Composition & Mix', name: '@father_insta' }
+            { role: 'Editor', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
+            { role: 'Featuring', name: 'Adut Akech', instagram: 'adutakech' },
+            { role: 'Director', name: 'Drew Vickers', instagram: 'drewvickers' },
+            { role: 'Video Commissioning Director', name: 'Lizzie Jefferies', instagram: 'lizziejefferies' },
+            { role: 'DOP', name: 'Theodore Hugonnier', instagram: 'theodorehugonnier' },
+            { role: 'Stylist', name: 'Bojana Kozarevic', instagram: 'bojana_kozarevic' },
+            { role: 'Art Direction', name: 'Chiara Mestre', instagram: 'chiaramestre' },
+            { role: 'Art Direction', name: 'Kerry Heaphy', instagram: 'kerry_heaphy' },
+            { role: 'Post Producer', name: 'Priscila Nava', instagram: 'priscilanava' },
+            { role: 'Post Production', name: 'Wild Island Films', instagram: 'wildislandfilms' },
+            { role: 'Post Production', name: 'Amy Bilsby', instagram: 'amybil' },
+            { role: 'Colourist', name: 'Francis Qureshi', instagram: 'francisqureshi' },
+            { role: 'VFX', name: 'Joshua Eiffel', instagram: 'joshaeiffel' },
+            { role: 'Composition & Mix', name: 'FATHER', instagram: 'father_insta' }
         ]
     },
     {
@@ -467,7 +476,7 @@ export const projects: Project[] = [
         thumbnailUrl: '/assets/editor/primark-spring/primark-spring_thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661987360',
         credits: [
-            { role: 'Edit + Sound Design', name: 'Riccardo Fusetti @Wild Island Films' },
+            { role: 'Edit + Sound Design', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
             { role: 'Director/ DoP', name: 'Ivan Shaw' },
             { role: 'Production Company', name: 'Wild Island Films' }
         ]
@@ -517,7 +526,7 @@ export const projects: Project[] = [
         thumbnailUrl: '/assets/editor/calvin-klein-jeans/calvin-klein-jeans_thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661990174',
         credits: [
-            { role: 'Edit + Sound Design', name: 'Riccardo Fusetti @WIld Island FIlms' },
+            { role: 'Edit + Sound Design', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
             { role: 'Director', name: 'Francesco Nazardo' }
         ]
     },
@@ -538,7 +547,7 @@ export const projects: Project[] = [
         thumbnailUrl: '/assets/editor/feel/feel_thumbnail.jpg',
         videoEmbedUrl: 'https://player.vimeo.com/video/661983214',
         credits: [
-            { role: 'Edit/ VFX', name: 'Riccardo Fusetti @Wild Island Films' },
+            { role: 'Edit/ VFX', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
             { role: 'Dop', name: 'Jan Vrhovnik' },
             { role: 'Production Company', name: 'Wild Island Films' }
         ]
