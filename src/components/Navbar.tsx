@@ -33,15 +33,12 @@ export default function Navbar() {
                 <div className={`absolute inset-0 z-0 bg-noise mix-blend-overlay pointer-events-none transition-opacity duration-500 ${scrolled ? 'opacity-[0.06]' : 'opacity-0'}`} />
 
                 <div className="relative z-10 flex w-full items-center justify-between gap-3 sm:gap-6 md:gap-10">
-                    <NavLink
-                        to="/"
-                        className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest text-[#FFFFFF] flex-shrink-0 opacity-100 hover:opacity-70 transition-opacity duration-300"
-                    >
+                    <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest text-[#FFFFFF] flex-shrink-0 cursor-default">
                         Riccardo Fusetti
-                    </NavLink>
+                    </span>
 
                     <nav className="flex items-center gap-3 sm:gap-5 md:gap-8">
-                        <NavLink to="/director" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Director</NavLink>
+                        <NavLink to="/" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`} end>Director</NavLink>
                         {/* <NavLink to="/photography" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Photography</NavLink> */}
                         <NavLink to="/editor" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Editor</NavLink>
                     </nav>

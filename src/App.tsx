@@ -43,7 +43,8 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Navigate to="/director" replace />} />
+          <Route path="/" element={<MasterView />} />
+          <Route path="/director" element={<Navigate to="/" replace />} />
           <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="/project/:id/assets/:token" element={<PrivateProjectPage />} />
           {/* <Route path="/photography" element={<PhotographyPage />} /> */}
