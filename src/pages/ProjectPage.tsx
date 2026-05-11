@@ -93,7 +93,7 @@ export default function ProjectPage() {
         <div ref={containerRef} className="min-h-screen bg-primary pt-24 pb-12 px-6 max-w-5xl mx-auto">
             <Link
                 ref={el => { contentRefs.current[0] = el; }}
-                to="/"
+                to={project.category === 'editor' ? "/editor" : "/"}
                 className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#4A4A4A] font-['Inter'] hover:text-[#D6D3C9] transition-colors duration-300 mb-8"
             >
                 <ArrowLeft size={16} />
