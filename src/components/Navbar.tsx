@@ -33,22 +33,32 @@ export default function Navbar() {
                 <div className={`absolute inset-0 z-0 bg-noise mix-blend-overlay pointer-events-none transition-opacity duration-500 ${scrolled ? 'opacity-[0.06]' : 'opacity-0'}`} />
 
                 <div className="relative z-10 flex w-full items-center justify-between gap-3 sm:gap-6 md:gap-10">
-                    <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest text-[#FFFFFF] flex-shrink-0 cursor-default">
+                    <span className="hidden xs:inline-block text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest text-white flex-shrink-0 cursor-default font-medium">
                         Riccardo Fusetti
                     </span>
 
-                    <nav className="flex items-center gap-3 sm:gap-5 md:gap-8">
-                        <NavLink to="/" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`} end>Director</NavLink>
-                        {/* <NavLink to="/photography" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Photography</NavLink> */}
-                        <NavLink to="/editor" className={({ isActive }) => `text-[9px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 ${isActive ? 'text-[#D6D3C9]' : 'text-[#FFFFFF] opacity-70 hover:opacity-100'}`}>Editor</NavLink>
+                    <nav className="flex items-center gap-4 sm:gap-6 md:gap-8">
+                        <NavLink 
+                            to="/" 
+                            className={({ isActive }) => `text-[10px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 rounded focus-visible:ring-2 focus-visible:ring-[#D6D3C9] focus-visible:ring-offset-2 focus-visible:ring-offset-black outline-none ${isActive ? 'text-[#D6D3C9] font-medium' : 'text-white/80 hover:text-white'}`} 
+                            end
+                        >
+                            Director
+                        </NavLink>
+                        <NavLink 
+                            to="/editor" 
+                            className={({ isActive }) => `text-[10px] sm:text-[10px] md:text-xs uppercase tracking-widest transition-all duration-300 rounded focus-visible:ring-2 focus-visible:ring-[#D6D3C9] focus-visible:ring-offset-2 focus-visible:ring-offset-black outline-none ${isActive ? 'text-[#D6D3C9] font-medium' : 'text-white/80 hover:text-white'}`}
+                        >
+                            Editor
+                        </NavLink>
                     </nav>
 
                     <NavLink
                         to="/contact"
-                        className="group relative overflow-hidden flex-shrink-0 inline-flex items-center justify-center rounded-full bg-[#4A4A4A] px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#D6D3C9] uppercase tracking-widest transition-transform duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-105"
+                        className="group relative overflow-hidden flex-shrink-0 inline-flex items-center justify-center rounded-full bg-[#52525B] border border-[#71717A]/40 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 text-[9px] sm:text-[10px] md:text-xs font-semibold text-[#E4E4E7] uppercase tracking-widest transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:scale-105 focus-visible:ring-2 focus-visible:ring-[#D6D3C9] focus-visible:ring-offset-2 focus-visible:ring-offset-black outline-none"
                     >
                         <span className="absolute inset-0 bg-[#D6D3C9] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"></span>
-                        <span className="relative z-10 group-hover:text-[#000000] transition-colors duration-300">Contact</span>
+                        <span className="relative z-10 group-hover:text-black transition-colors duration-300">Contact</span>
                     </NavLink>
                 </div>
             </div>

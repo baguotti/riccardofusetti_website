@@ -10,11 +10,37 @@ import Footer from './components/Footer';
 
 // import PhotographyPage from './pages/PhotographyPage';
 
-function ScrollToTop() {
+function RouteHandler() {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Dynamic document title updater based on route
+    if (pathname === '/' || pathname === '/director') {
+      document.title = 'Riccardo Fusetti — Director';
+    } else if (pathname === '/editor') {
+      document.title = 'Riccardo Fusetti — Editor';
+    } else if (pathname === '/contact') {
+      document.title = 'Riccardo Fusetti — Info / Contact';
+    } else if (pathname.startsWith('/project/')) {
+      const parts = pathname.split('/');
+      const projectId = parts[2];
+      const project = projects.find(p => p.id === projectId);
+      if (project) {
+        if (pathname.includes('/assets/')) {
+          document.title = `${project.title} (Private Access) — Riccardo Fusetti`;
+        } else {
+          document.title = `${project.title} — Riccardo Fusetti`;
+        }
+      } else {
+        document.title = 'Riccardo Fusetti';
+      }
+    } else {
+      document.title = 'Riccardo Fusetti';
+    }
   }, [pathname]);
+
   return null;
 }
 
@@ -38,7 +64,7 @@ function App() {
       {/* Noise texture overlay */}
       <div className="noise-overlay pointer-events-none"></div>
 
-      <ScrollToTop />
+      <RouteHandler />
       <Navbar />
 
       <main>

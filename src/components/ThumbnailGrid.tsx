@@ -28,7 +28,7 @@ export default function ThumbnailGrid({ projects }: Props) {
                     <Link
                         key={project.id}
                         to={`/project/${project.id}`}
-                        className={`project-card group block relative rounded-xl overflow-hidden ${project.posterThumbUrl
+                        className={`project-card group block relative rounded-xl overflow-hidden focus-visible:ring-2 focus-visible:ring-[#D6D3C9] focus-visible:ring-offset-4 focus-visible:ring-offset-primary outline-none ${project.posterThumbUrl
                                 ? 'aspect-[3/4]'
                                 : 'aspect-video md:aspect-[4/5] lg:aspect-video'
                             }`}
