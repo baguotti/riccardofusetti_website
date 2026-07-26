@@ -51,7 +51,7 @@ export const projects: Project[] = [
         ],
         posterUrl: '/assets/director/editorial-short/editorial-short_poster.jpg',
         privateData: {
-            token: 'projectpage',
+            token: 'password',
             assets: [
                 {
                     id: 'treatment',
@@ -127,7 +127,7 @@ export const projects: Project[] = [
             { label: 'Minute Shorts Premiere', url: 'https://www.minuteshorts.co.uk/film_player/motivational' }
         ],
         privateData: {
-            token: 'projectpage',
+            token: 'password',
             assets: [
                 {
                     id: 'treatment',
@@ -202,7 +202,7 @@ export const projects: Project[] = [
             '/assets/director/generation-short/generation-short_still_07.png'
         ],
         privateData: {
-            token: 'projectpage',
+            token: 'password',
             assets: [
                 {
                     id: 'treatment',
@@ -398,7 +398,7 @@ export const projects: Project[] = [
         title: 'Harvey Nichols Xmas 25',
         category: 'editor',
         thumbnailUrl: '/assets/editor/harvey-nichols-xmas-25/harvey-nichols-xmas-25_thumbnail.webp',
-        videoEmbedUrl: 'https://player.vimeo.com/video/1168095796?h=200734b769',
+        isVertical: true,
         videoEmbedUrls: [
             'https://player.vimeo.com/video/1168095796?h=200734b769',
             'https://player.vimeo.com/video/1168095694?h=85eee64338'
