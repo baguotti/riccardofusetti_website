@@ -1,53 +1,41 @@
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import type { CSSProperties } from 'react';
+import '@fontsource/jetbrains-mono/latin-400.css';
+import '@fontsource/playfair-display/latin-400-italic.css';
+import { seo } from '../seo';
+
+export const meta = () => seo({ title: 'Riccardo Fusetti — Info / Contact', path: '/contact' });
+
+const step = (i: number) => ({ '--i': i } as CSSProperties);
 
 export default function ContactPage() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const contentRef = useRef<HTMLDivElement>(null);
-
-    useGSAP(() => {
-        if (!contentRef.current) return;
-
-        const children = contentRef.current.children;
-
-        gsap.from(children, {
-            y: 40,
-            opacity: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power3.out"
-        });
-    }, { scope: containerRef });
-
     return (
-        <div ref={containerRef} className="relative min-h-screen bg-primary pt-40 pb-24 px-6 md:px-12 overflow-hidden selection:bg-[#D6D3C9] selection:text-black">
+        <div className="relative min-h-screen bg-primary pt-40 pb-24 px-6 md:px-12 overflow-hidden selection:bg-[#D6D3C9] selection:text-black">
             {/* Global Noise Overlay */}
             <div className="noise-overlay" />
 
             <div className="max-w-[480px] mx-auto relative z-10">
-                <div ref={contentRef} className="space-y-16">
+                <div className="space-y-16" style={{ '--reveal-y': '40px', '--reveal-duration': '1.2s', '--reveal-stagger': '150ms' } as CSSProperties}>
                     {/* Header Label */}
-                    <div className="flex items-center gap-4">
+                    <div style={step(0)} className="reveal flex items-center gap-4">
                         <span className="w-8 h-[1px] bg-[#71717A]" />
-                        <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#A1A1AA] font-['JetBrains_Mono']">
+                        <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#A1A1AA] font-data">
                             Info / Contact
                         </h2>
                     </div>
 
                     {/* Main Statement */}
-                    <div className="space-y-6">
+                    <div style={step(1)} className="reveal space-y-6">
                         <p className="text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">
-                            <span className="font-['Playfair_Display'] italic pr-2">Freelance</span>
-                            <span className="font-['Inter'] font-light">Director & Editor</span>
+                            <span className="font-drama italic pr-2">Freelance</span>
+                            <span className="font-heading font-light">Director & Editor</span>
                         </p>
-                        <p className="text-sm font-['JetBrains_Mono'] text-[#A1A1AA] uppercase tracking-widest">
+                        <p className="text-sm font-data text-[#A1A1AA] uppercase tracking-widest">
                             London — Worldwide
                         </p>
                     </div>
 
                     {/* Representation */}
-                    <div className="space-y-4 font-['Inter'] text-[11px] uppercase tracking-[0.2em] text-[#A1A1AA]">
+                    <div style={step(2)} className="reveal space-y-4 font-heading text-[11px] uppercase tracking-[0.2em] text-[#A1A1AA]">
                         <div className="flex flex-col gap-1">
                             <span className="text-[#A1A1AA]/80 text-[9px] tracking-widest mb-1">Director Representation</span>
                             <p className="text-white font-medium">DADBOD FILMS (Non-Exclusive)</p>
@@ -66,7 +54,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* CTA Section */}
-                    <div className="pt-8">
+                    <div style={step(3)} className="reveal pt-8">
                         <a
                             href="mailto:fusetti.riccardo@gmail.com"
                             className="group relative overflow-hidden inline-block w-full border border-[#71717A]/60 px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9] rounded-2xl focus-visible:ring-2 focus-visible:ring-[#D6D3C9] focus-visible:ring-offset-4 focus-visible:ring-offset-primary outline-none"
@@ -78,7 +66,7 @@ export default function ContactPage() {
                                 <span className="text-[9px] text-[#A1A1AA] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-300">
                                     Get in touch
                                 </span>
-                                <span className="text-sm text-white font-['JetBrains_Mono'] group-hover:text-black transition-colors duration-300">
+                                <span className="text-sm text-white font-data group-hover:text-black transition-colors duration-300">
                                     fusetti.riccardo@gmail.com
                                 </span>
                             </div>

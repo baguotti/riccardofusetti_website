@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# riccardofusetti.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React Router 7 (framework mode, static pre-rendering) + Tailwind 4, hosted on Vercel.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev      # local dev server (private pages work locally too)
+npm run build    # optimise images, type-check, pre-render every page into dist/client
+npm run images   # only regenerate image variants
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Adding or changing images
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Put the original (JPG/PNG/WebP/GIF, any size) in `public/assets/...`.
+2. Reference it in `src/data/projects.ts` by that path, e.g. `/assets/director/foo/foo_still_01.png`.
+3. Run `npm run images` and commit the new files in `public/img/` and `src/data/images.json`.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The script makes AVIF + WebP copies at 480/960/1600/2400px, a 1200×630 JPEG for social
+previews of each project thumbnail, and animated WebP for GIFs. The site serves those
+automatically through `<Img>` (`src/components/Img.tsx`). Variant filenames contain a
+content hash, so they are cached forever and replacing an original just produces new files.
+
+## Private project pages
+
+- Passwords and private asset lists live in `server/private-data.ts`. They are never sent to the browser.
+- Private files (PDFs etc.) live in `private/<project-id>/` and are served at `/private/<project-id>/...`
+  only after the visitor enters the right password (checked by `middleware.ts` on Vercel).
+- Mark a project with `hasPrivate: true` in `src/data/projects.ts` to show the password link.
+- Optional: set a `PRIVATE_COOKIE_SECRET` environment variable in Vercel to harden the access cookie.
+
+## Adding a page
+
+Add a route in `src/routes.ts`. Public pages should also be added to `prerender()` in
+`react-router.config.ts` (projects are added automatically).

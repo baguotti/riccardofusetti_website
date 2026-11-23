@@ -44,5 +44,6 @@ export type Project = {
     press?: PressLink[];
     gallery?: string[];
     posterUrl?: string;
-    privateData?: PrivateSection;
+    /** Has a password-protected page; its contents live in server/private-data.ts. */
+    hasPrivate?: boolean;
 };

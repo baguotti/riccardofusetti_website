@@ -1,38 +1,42 @@
-import { useRef, useState, useEffect } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useState, useEffect, type CSSProperties } from 'react';
+import { Link, redirect } from 'react-router';
 import { ArrowLeft, Play, X, ChevronLeft, ChevronRight, Lock, FileText, ExternalLink, Maximize2 } from 'lucide-react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import type { Route } from './+types/PrivateProjectPage';
 import { projects } from '../data/projects';
 import type { PrivateAsset } from '../types';
+import { seo } from '../seo';
 
-export default function PrivateProjectPage() {
-    const { id, token } = useParams<{ id: string; token: string }>();
-    const project = projects.find(p => p.id === id);
+// The server checks the password and returns this project's private assets
+// (plus a cookie that unlocks its files). Wrong password -> back to the project.
+export async function clientLoader({ params }: Route.ClientLoaderArgs) {
+    const project = projects.find(p => p.id === params.id);
+    if (!project?.hasPrivate) throw redirect('/');
+    const res = await fetch('/api/unlock', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ id: params.id, token: params.token }),
+    }).catch(() => null);
+    if (!res?.ok) throw redirect(`/project/${params.id}`);
+    const { assets } = (await res.json()) as { assets: PrivateAsset[] };
+    return { project, assets };
+}
 
-    const containerRef = useRef<HTMLDivElement>(null);
-    const contentRefs = useRef<(HTMLElement | null)[]>([]);
-    
+export function meta({ params }: Route.MetaArgs) {
+    const project = projects.find(p => p.id === params.id);
+    return seo({
+        title: `${project?.title ?? 'Private'} (Private Access) — Riccardo Fusetti`,
+        path: `/project/${params.id}`,
+        noindex: true,
+    });
+}
+
+export default function PrivateProjectPage({ loaderData }: Route.ComponentProps) {
+    const { project, assets } = loaderData;
+    const id = project.id;
+
     // Lightbox state
     const [lightboxData, setLightboxData] = useState<{ urls: string[], index: number } | null>(null);
     const [playingVideos, setPlayingVideos] = useState<Record<string, boolean>>({});
-
-    useGSAP(() => {
-        gsap.from(contentRefs.current, {
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power3.out"
-        });
-    }, { scope: containerRef });
-
-    // Validation: Redirect if no project, no private data, or token mismatch
-    if (!project || !project.privateData || project.privateData.token !== token) {
-        return <Navigate to={project ? `/project/${id}` : '/'} replace />;
-    }
-
-    const { assets } = project.privateData;
 
     const handleNext = (e?: React.MouseEvent) => {
         e?.stopPropagation();
@@ -79,17 +83,17 @@ export default function PrivateProjectPage() {
 
     const renderAsset = (asset: PrivateAsset, index: number) => {
         switch (asset.type) {
-            case 'video':
+            case 'video': {
                 const isPlaying = playingVideos[asset.id] || false;
                 return (
-                    <div className="mb-16" key={asset.id} ref={el => { contentRefs.current[index + 3] = el; }}>
+                    <div className="reveal mb-16" key={asset.id} style={{ '--i': index + 3 } as CSSProperties}>
                         <div className="flex justify-between items-baseline mb-4">
-                            <h3 className="text-xl font-['Inter'] font-light text-white tracking-wide">{asset.title}</h3>
-                            <span className="text-[10px] uppercase tracking-widest text-[#D6D3C9]/50 font-['Inter'] px-2 py-0.5 rounded border border-[#4A4A4A]/40 bg-white/[0.02]">
+                            <h3 className="text-xl font-heading font-light text-white tracking-wide">{asset.title}</h3>
+                            <span className="text-[10px] uppercase tracking-widest text-[#D6D3C9]/50 font-heading px-2 py-0.5 rounded border border-[#4A4A4A]/40 bg-white/[0.02]">
                                 Video
                             </span>
                         </div>
-                        {asset.description && <p className="text-sm text-white/60 font-['Inter'] mb-6 leading-relaxed max-w-2xl">{asset.description}</p>}
+                        {asset.description && <p className="text-sm text-white/60 font-heading mb-6 leading-relaxed max-w-2xl">{asset.description}</p>}
                         
                         <div className="aspect-video w-full border border-[#4A4A4A]/60 hover:border-[#D6D3C9]/40 transition-colors duration-500 rounded-xl overflow-hidden relative bg-[#141416] shadow-xl group">
                             {!isPlaying ? (
@@ -124,19 +128,21 @@ export default function PrivateProjectPage() {
                     </div>
                 );
 
-            case 'pdf':
+            }
+
+            case 'pdf': {
                 const rawDocUrl = asset.embedUrl || asset.url;
                 // Add viewer parameters to clean up PDF browser toolbar where applicable
                 const docUrl = rawDocUrl ? (rawDocUrl.endsWith('.pdf') ? `${rawDocUrl}#toolbar=0&navpanes=0&scrollbar=1` : rawDocUrl) : '';
                 return (
-                    <div className="mb-16" key={asset.id} ref={el => { contentRefs.current[index + 3] = el; }}>
+                    <div className="reveal mb-16" key={asset.id} style={{ '--i': index + 3 } as CSSProperties}>
                         <div className="flex justify-between items-baseline mb-4">
-                            <h3 className="text-xl font-['Inter'] font-light text-white tracking-wide">{asset.title}</h3>
-                            <span className="text-[10px] uppercase tracking-widest text-[#D6D3C9]/50 font-['Inter'] px-2.5 py-0.5 rounded-full border border-[#4A4A4A]/40 bg-white/[0.02]">
+                            <h3 className="text-xl font-heading font-light text-white tracking-wide">{asset.title}</h3>
+                            <span className="text-[10px] uppercase tracking-widest text-[#D6D3C9]/50 font-heading px-2.5 py-0.5 rounded-full border border-[#4A4A4A]/40 bg-white/[0.02]">
                                 Production PDF
                             </span>
                         </div>
-                        {asset.description && <p className="text-sm text-white/60 font-['Inter'] mb-6 leading-relaxed max-w-2xl">{asset.description}</p>}
+                        {asset.description && <p className="text-sm text-white/60 font-heading mb-6 leading-relaxed max-w-2xl">{asset.description}</p>}
                         
                         <div className="border border-[#4A4A4A]/60 rounded-xl overflow-hidden bg-[#141416] transition-all duration-500 hover:border-[#D6D3C9]/40 shadow-2xl group">
                             {/* Custom Integrated App Control Header */}
@@ -151,8 +157,8 @@ export default function PrivateProjectPage() {
                                         <FileText size={15} />
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <span className="text-xs font-['Inter'] text-white/90 font-medium tracking-wide">{asset.title}</span>
-                                        <span className="hidden sm:inline-block text-[10px] font-['Inter'] text-white/40 uppercase tracking-widest px-2 py-0.5 rounded bg-black/30">PDF</span>
+                                        <span className="text-xs font-heading text-white/90 font-medium tracking-wide">{asset.title}</span>
+                                        <span className="hidden sm:inline-block text-[10px] font-heading text-white/40 uppercase tracking-widest px-2 py-0.5 rounded bg-black/30">PDF</span>
                                     </div>
                                 </div>
 
@@ -161,7 +167,7 @@ export default function PrivateProjectPage() {
                                         href={asset.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-white/80 hover:text-white transition-all text-xs font-['Inter']"
+                                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 text-white/80 hover:text-white transition-all text-xs font-heading"
                                         aria-label={`Open ${asset.title} in new tab`}
                                     >
                                         <span>Open Fullscreen</span>
@@ -187,17 +193,19 @@ export default function PrivateProjectPage() {
                     </div>
                 );
 
+            }
+
             case 'gallery':
                 if (!asset.urls || asset.urls.length === 0) return null;
                 return (
-                    <div className="mb-16" key={asset.id} ref={el => { contentRefs.current[index + 3] = el; }}>
+                    <div className="reveal mb-16" key={asset.id} style={{ '--i': index + 3 } as CSSProperties}>
                         <div className="flex justify-between items-baseline mb-4">
-                            <h3 className="text-xl font-['Inter'] font-light text-white tracking-wide">{asset.title}</h3>
-                            <span className="text-[10px] uppercase tracking-widest text-[#D6D3C9]/50 font-['Inter'] px-2 py-0.5 rounded border border-[#4A4A4A]/40 bg-white/[0.02]">
+                            <h3 className="text-xl font-heading font-light text-white tracking-wide">{asset.title}</h3>
+                            <span className="text-[10px] uppercase tracking-widest text-[#D6D3C9]/50 font-heading px-2 py-0.5 rounded border border-[#4A4A4A]/40 bg-white/[0.02]">
                                 Gallery ({asset.urls.length})
                             </span>
                         </div>
-                        {asset.description && <p className="text-sm text-white/60 font-['Inter'] mb-6 leading-relaxed max-w-2xl">{asset.description}</p>}
+                        {asset.description && <p className="text-sm text-white/60 font-heading mb-6 leading-relaxed max-w-2xl">{asset.description}</p>}
                         
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                             {asset.urls.map((img, i) => (
@@ -227,25 +235,26 @@ export default function PrivateProjectPage() {
     };
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-primary pt-24 pb-16 px-6 max-w-5xl mx-auto">
+        <div className="min-h-screen bg-primary pt-24 pb-16 px-6 max-w-5xl mx-auto">
             <Link
-                ref={el => { contentRefs.current[0] = el; }}
+                style={{ '--i': 0 } as CSSProperties}
+                viewTransition
                 to={`/project/${id}`}
-                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#D6D3C9]/60 font-['Inter'] hover:text-white transition-colors duration-300 mb-12"
+                className="inline-flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#D6D3C9]/60 font-heading hover:text-white transition-colors duration-300 mb-12"
             >
                 <ArrowLeft size={16} />
                 Back to {project.title}
             </Link>
 
-            <div ref={el => { contentRefs.current[1] = el; }} className="mb-16 pb-8 border-b border-[#4A4A4A]/50">
+            <div style={{ '--i': 1 } as CSSProperties} className="reveal mb-16 pb-8 border-b border-[#4A4A4A]/50">
                 <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full border border-[#D6D3C9]/20 bg-white/[0.02]">
                     <Lock size={13} className="text-[#D6D3C9]" />
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#D6D3C9] font-['Inter'] font-medium">Private Access</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#D6D3C9] font-heading font-medium">Private Access</span>
                 </div>
-                <h1 className="text-3xl md:text-5xl font-['Inter'] font-light tracking-tight text-white mb-4">
+                <h1 className="text-3xl md:text-5xl font-heading font-light tracking-tight text-white mb-4">
                     {project.title}
                 </h1>
-                <p className="text-base md:text-lg text-white/60 font-['Inter'] leading-relaxed max-w-2xl">
+                <p className="text-base md:text-lg text-white/60 font-heading leading-relaxed max-w-2xl">
                     Confidential project assets and production materials. Please do not share this link without permission.
                 </p>
             </div>
@@ -257,7 +266,7 @@ export default function PrivateProjectPage() {
             {/* Lightbox Overlay */}
             {lightboxData && (
                 <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-primary/95 backdrop-blur-md p-4 md:p-12 animate-in fade-in duration-300"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-primary/95 backdrop-blur-md p-4 md:p-12 lightbox-in"
                     onClick={() => setLightboxData(null)}
                     role="dialog"
                     aria-modal="true"
@@ -292,11 +301,11 @@ export default function PrivateProjectPage() {
                             key={lightboxData.index}
                             src={lightboxData.urls[lightboxData.index]}
                             alt={`Gallery image ${lightboxData.index + 1}`}
-                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-300 pointer-events-auto border border-white/10"
+                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl lightbox-img-in pointer-events-auto border border-white/10"
                         />
                     </div>
 
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.25em] text-white/50 font-['Inter'] px-3 py-1 rounded-full bg-black/40 border border-white/10 backdrop-blur-sm">
+                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.25em] text-white/50 font-heading px-3 py-1 rounded-full bg-black/40 border border-white/10 backdrop-blur-sm">
                         {lightboxData.index + 1} / {lightboxData.urls.length}
                     </div>
                 </div>

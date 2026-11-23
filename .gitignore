@@ -27,3 +27,6 @@ dist-ssr
 ._*
 .Spotlight-V100
 .Trashes
+.sync.ffs_db
+.react-router
+.vercel

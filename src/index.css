@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap');
+@import "@fontsource-variable/inter/wght.css";
 @import "tailwindcss";
 
 @theme {
@@ -9,9 +9,9 @@
   --color-surface: #0A0A0A;
   --color-border: #4A4A4A;
 
-  --font-heading: 'Inter', sans-serif;
+  --font-heading: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --font-drama: 'Playfair Display', serif;
-  --font-data: 'JetBrains Mono', monospace;
+  --font-data: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 html {
@@ -27,7 +27,6 @@ body {
 }
 
 @layer base {
-
   html,
   body {
     color: var(--color-background);
@@ -35,21 +34,73 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* <picture> wrappers shouldn't affect layout — styling lives on the <img>. */
+  picture {
+    display: contents;
+  }
 }
 
-/* Noise overlay — adds subtle warm texture over pure black */
+/* Noise overlay — subtle warm texture over pure black (small tiled PNG). */
 .noise-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
   opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: url("/noise.png");
 }
 
 .bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: url("/noise.png");
+}
+
+/* Entrance animation. Runs from first paint (no JavaScript needed).
+   Stagger with style={{ '--i': n }}. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 30px));
+  }
+}
+
+.reveal {
+  animation: reveal var(--reveal-duration, 1s) cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation-delay: calc(var(--i, 0) * var(--reveal-stagger, 100ms));
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes zoom-in {
+  from { opacity: 0; transform: scale(0.95); }
+}
+
+.lightbox-in {
+  animation: fade-in 0.3s ease-out both;
+}
+
+.lightbox-img-in {
+  animation: zoom-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+/* Page-to-page crossfade (React Router <Link viewTransition>). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .lightbox-in,
+  .lightbox-img-in {
+    animation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }
