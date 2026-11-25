@@ -1,54 +1,11 @@
-import { useEffect, useSyncExternalStore } from 'react';
 import { NavLink, Link, useLocation } from 'react-router';
 import { isDirectorRoutePath, isEditorRoutePath } from '../data/directorMeta';
-
-type PaperMode = 'light' | 'dark';
-
-const MODE_KEY = 'rf-paper-mode';
-const MODE_EVENT = 'rf-paper-mode-change';
-
-function subscribeMode(cb: () => void): () => void {
-    window.addEventListener(MODE_EVENT, cb);
-    window.addEventListener('storage', cb);
-    return () => {
-        window.removeEventListener(MODE_EVENT, cb);
-        window.removeEventListener('storage', cb);
-    };
-}
-
-function getClientMode(): PaperMode {
-    try {
-        return window.sessionStorage.getItem(MODE_KEY) === 'dark' ? 'dark' : 'light';
-    } catch {
-        return 'light';
-    }
-}
-
-function getServerMode(): PaperMode {
-    return 'light';
-}
 
 export default function DirectorHeader() {
     const { pathname } = useLocation();
     const onDirector = isDirectorRoutePath(pathname);
     const onEditor = isEditorRoutePath(pathname);
     const onInfo = pathname === '/contact';
-    const mode = useSyncExternalStore(subscribeMode, getClientMode, getServerMode);
-
-    useEffect(() => {
-        document.documentElement.dataset.paperMode = mode;
-    }, [mode]);
-
-    const toggleMode = () => {
-        const next: PaperMode = mode === 'light' ? 'dark' : 'light';
-        try {
-            window.sessionStorage.setItem(MODE_KEY, next);
-        } catch {
-            // ignore storage errors
-        }
-        document.documentElement.dataset.paperMode = next;
-        window.dispatchEvent(new Event(MODE_EVENT));
-    };
 
     return (
         <header className="sticky top-0 z-40 w-full bg-paper/95 backdrop-blur-[2px] border-b border-rule">
@@ -111,13 +68,6 @@ export default function DirectorHeader() {
                     >
                         info
                     </NavLink>
-                    <button
-                        type="button"
-                        onClick={toggleMode}
-                        className="text-[11px] italic text-ink-subtle hover:text-ink transition-colors duration-200 cursor-pointer focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-ink"
-                    >
-                        {mode === 'light' ? 'dark' : 'light'}
-                    </button>
                 </nav>
             </div>
         </header>

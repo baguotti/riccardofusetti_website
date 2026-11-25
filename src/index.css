@@ -12,13 +12,13 @@
   --color-surface: #0A0A0A;
   --color-border: #4A4A4A;
 
-  /* Archival printed-encyclopedia theme tokens (Director) */
-  --color-paper: #F4F3EF;
-  --color-paper-inset: #EAE8E1;
-  --color-ink: #151513;
-  --color-ink-muted: #6D6B65;
-  --color-ink-subtle: #9B9890;
-  --color-rule: #DCD9D0;
+  /* Archival dark editorial theme tokens */
+  --color-paper: #111110;
+  --color-paper-inset: #191917;
+  --color-ink: #EAE8E2;
+  --color-ink-muted: #9A9890;
+  --color-ink-subtle: #686660;
+  --color-rule: #262623;
 
   --font-heading: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --font-drama: 'Playfair Display', serif;
@@ -45,15 +45,6 @@ html[data-theme="paper"] body {
   font-family: var(--font-editorial);
   font-optical-sizing: auto;
   font-feature-settings: "kern" 1, "liga" 1;
-}
-
-html[data-theme="paper"][data-paper-mode="dark"] {
-  --color-paper: #111110;
-  --color-paper-inset: #191917;
-  --color-ink: #EAE8E2;
-  --color-ink-muted: #9A9890;
-  --color-ink-subtle: #686660;
-  --color-rule: #262623;
   color-scheme: dark;
 }
 

@@ -31,8 +31,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content={paper ? '#F4F3EF' : '#050505'} />
-                <meta name="color-scheme" content={paper ? 'light' : 'dark'} />
+                <meta name="theme-color" content={paper ? '#111110' : '#050505'} />
+                <meta name="color-scheme" content="dark" />
                 <meta name="darkreader-lock" />
                 <Meta />
                 <Links />
