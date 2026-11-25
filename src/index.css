@@ -1,7 +1,10 @@
 @import "@fontsource-variable/inter/wght.css";
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
 @import "tailwindcss";
 
 @theme {
+  /* Legacy dark theme tokens (Editor / Contact / Private) */
   --color-primary: #000000;
   --color-accent: #D6D3C9;
   --color-background: #FFFFFF;
@@ -9,9 +12,18 @@
   --color-surface: #0A0A0A;
   --color-border: #4A4A4A;
 
+  /* Archival printed-encyclopedia theme tokens (Director) */
+  --color-paper: #F4F3EF;
+  --color-paper-inset: #EAE8E1;
+  --color-ink: #151513;
+  --color-ink-muted: #6D6B65;
+  --color-ink-subtle: #9B9890;
+  --color-rule: #DCD9D0;
+
   --font-heading: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --font-drama: 'Playfair Display', serif;
   --font-data: 'JetBrains Mono', ui-monospace, monospace;
+  --font-editorial: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
 }
 
 html {
@@ -24,6 +36,30 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+}
+
+html[data-theme="paper"],
+html[data-theme="paper"] body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-editorial);
+  font-optical-sizing: auto;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+html[data-theme="paper"][data-paper-mode="dark"] {
+  --color-paper: #111110;
+  --color-paper-inset: #191917;
+  --color-ink: #EAE8E2;
+  --color-ink-muted: #9A9890;
+  --color-ink-subtle: #686660;
+  --color-rule: #262623;
+  color-scheme: dark;
+}
+
+html[data-theme="paper"] ::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
 }
 
 @layer base {
@@ -41,7 +77,20 @@ body {
   }
 }
 
-/* Noise overlay — subtle warm texture over pure black (small tiled PNG). */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Noise overlay — subtle warm texture over pure black (legacy dark pages). */
 .noise-overlay {
   position: fixed;
   inset: 0;
@@ -69,6 +118,19 @@ body {
   animation-delay: calc(var(--i, 0) * var(--reveal-stagger, 100ms));
 }
 
+@keyframes paper-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.paper-fade {
+  animation: paper-fade 180ms ease-out both;
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
 }
@@ -78,21 +140,22 @@ body {
 }
 
 .lightbox-in {
-  animation: fade-in 0.3s ease-out both;
+  animation: fade-in 0.25s ease-out both;
 }
 
 .lightbox-img-in {
-  animation: zoom-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: zoom-in 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 /* Page-to-page crossfade (React Router <Link viewTransition>). */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 220ms;
+  animation-duration: 200ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
+  .paper-fade,
   .lightbox-in,
   .lightbox-img-in {
     animation: none;

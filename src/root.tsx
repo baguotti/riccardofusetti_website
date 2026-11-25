@@ -1,11 +1,18 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, Link } from 'react-router';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, Link, useLocation } from 'react-router';
 import type { Route } from './+types/root';
 import stylesheet from './index.css?url';
 import interFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import newsreaderRegular from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url';
+import newsreaderItalic from '@fontsource-variable/newsreader/files/newsreader-latin-opsz-italic.woff2?url';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import DirectorHeader from './components/DirectorHeader';
+import DirectorFooter from './components/DirectorFooter';
+import { isDirectorThemePath } from './data/directorMeta';
 
 export const links: Route.LinksFunction = () => [
+    { rel: 'preload', href: newsreaderRegular, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
+    { rel: 'preload', href: newsreaderItalic, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
     { rel: 'preload', href: interFont, as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' },
     { rel: 'stylesheet', href: stylesheet },
     // Vimeo player starts faster when the connection is already open.
@@ -16,13 +23,16 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+    const { pathname } = useLocation();
+    const paper = isDirectorThemePath(pathname);
+
     return (
-        <html lang="en">
+        <html lang="en" data-theme={paper ? 'paper' : 'dark'}>
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="theme-color" content="#050505" />
-                <meta name="color-scheme" content="dark" />
+                <meta name="theme-color" content={paper ? '#F4F3EF' : '#050505'} />
+                <meta name="color-scheme" content={paper ? 'light' : 'dark'} />
                 <meta name="darkreader-lock" />
                 <Meta />
                 <Links />
@@ -37,6 +47,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+    const { pathname } = useLocation();
+    const paper = isDirectorThemePath(pathname);
+
+    if (paper) {
+        return (
+            <div className="min-h-screen flex flex-col bg-paper text-ink font-editorial">
+                <DirectorHeader />
+                <main className="flex-1 flex flex-col">
+                    <Outlet />
+                </main>
+                <DirectorFooter />
+            </div>
+        );
+    }
+
     return (
         <>
             <div className="noise-overlay" aria-hidden="true" />
@@ -57,10 +82,12 @@ export function HydrateFallback() {
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     const notFound = isRouteErrorResponse(error) && error.status === 404;
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center gap-6 px-6 text-center">
-            <title>{notFound ? 'Not found — Riccardo Fusetti' : 'Error — Riccardo Fusetti'}</title>
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#A1A1AA]">{notFound ? '404' : 'Something went wrong'}</p>
-            <Link to="/" className="text-xs uppercase tracking-widest text-white/80 hover:text-white">Back to index</Link>
+        <div className="min-h-screen flex flex-col items-center justify-center gap-6 px-6 text-center bg-paper text-ink font-editorial">
+            <title>{notFound ? 'not found — riccardo fusetti' : 'error — riccardo fusetti'}</title>
+            <p className="text-[13px] italic text-ink-muted">{notFound ? '404 — entry not found' : 'something went wrong'}</p>
+            <Link to="/" className="text-[14px] text-ink underline underline-offset-4 decoration-[1px] hover:opacity-65 transition-opacity">
+                return to index
+            </Link>
         </div>
     );
 }

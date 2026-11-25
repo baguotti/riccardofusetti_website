@@ -11,7 +11,7 @@ export const projects: Project[] = [
         posterThumbUrl: '/assets/director/editorial-short/editorial-short_thumbnail_vertical.webp',
         isVertical: false,
         videoEmbedUrl: 'https://player.vimeo.com/video/1069658930',
-        year: '2024',
+        year: '2025',
         client: 'Fashion Lifestyle',
         description: 'Fashion lifestyle editorial. With a twist.',
         credits: [

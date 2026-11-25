@@ -1,86 +1,54 @@
-import type { CSSProperties } from 'react';
-import '@fontsource/jetbrains-mono/latin-400.css';
-import '@fontsource/playfair-display/latin-400-italic.css';
+import { FootnoteRef } from '../components/EditorialParts';
 import { seo } from '../seo';
 
-export const meta = () => seo({ title: 'Riccardo Fusetti — Info / Contact', path: '/contact' });
-
-const step = (i: number) => ({ '--i': i } as CSSProperties);
+export const meta = () => seo({ title: 'info — riccardo fusetti', path: '/contact' });
 
 export default function ContactPage() {
     return (
-        <div className="relative min-h-screen bg-primary pt-40 pb-24 px-6 md:px-12 overflow-hidden selection:bg-[#D6D3C9] selection:text-black">
-            {/* Global Noise Overlay */}
-            <div className="noise-overlay" />
-
-            <div className="max-w-[480px] mx-auto relative z-10">
-                <div className="space-y-16" style={{ '--reveal-y': '40px', '--reveal-duration': '1.2s', '--reveal-stagger': '150ms' } as CSSProperties}>
-                    {/* Header Label */}
-                    <div style={step(0)} className="reveal flex items-center gap-4">
-                        <span className="w-8 h-[1px] bg-[#71717A]" />
-                        <h2 className="text-[10px] tracking-[0.3em] uppercase text-[#A1A1AA] font-data">
-                            Info / Contact
-                        </h2>
-                    </div>
-
-                    {/* Main Statement */}
-                    <div style={step(1)} className="reveal space-y-6">
-                        <p className="text-3xl md:text-4xl text-white leading-[1.1] tracking-tight">
-                            <span className="font-drama italic pr-2">Freelance</span>
-                            <span className="font-heading font-light">Director & Editor</span>
-                        </p>
-                        <p className="text-sm font-data text-[#A1A1AA] uppercase tracking-widest">
-                            London — Worldwide
-                        </p>
-                    </div>
-
-                    {/* Representation */}
-                    <div style={step(2)} className="reveal space-y-4 font-heading text-[11px] uppercase tracking-[0.2em] text-[#A1A1AA]">
-                        <div className="flex flex-col gap-1">
-                            <span className="text-[#A1A1AA]/80 text-[9px] tracking-widest mb-1">Director Representation</span>
-                            <p className="text-white font-medium">DADBOD FILMS (Non-Exclusive)</p>
-                        </div>
-                        <div className="flex flex-col gap-1">
-                            <span className="text-[#A1A1AA]/80 text-[9px] tracking-widest mb-1">Editor Roster</span>
-                            <a
-                                href="https://wildislandfilms.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white font-medium hover:text-[#D6D3C9] transition-colors duration-300 rounded focus-visible:ring-2 focus-visible:ring-[#D6D3C9] outline-none"
-                            >
-                                Wild Island Films
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* CTA Section */}
-                    <div style={step(3)} className="reveal pt-8">
-                        <a
-                            href="mailto:fusetti.riccardo@gmail.com"
-                            className="group relative overflow-hidden inline-block w-full border border-[#71717A]/60 px-10 py-6 text-center transition-all duration-500 hover:border-[#D6D3C9] rounded-2xl focus-visible:ring-2 focus-visible:ring-[#D6D3C9] focus-visible:ring-offset-4 focus-visible:ring-offset-primary outline-none"
-                        >
-                            {/* Sliding Background */}
-                            <span className="absolute inset-x-0 bottom-0 h-0 bg-[#D6D3C9] transition-all duration-500 ease-out group-hover:h-full"></span>
-
-                            <div className="relative z-10 flex flex-col items-center gap-2">
-                                <span className="text-[9px] text-[#A1A1AA] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-300">
-                                    Get in touch
-                                </span>
-                                <span className="text-sm text-white font-data group-hover:text-black transition-colors duration-300">
-                                    fusetti.riccardo@gmail.com
-                                </span>
-                            </div>
-
-                            {/* Corner Accents */}
-                            <span className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#71717A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tl-xl" />
-                            <span className="absolute top-0 right-0 w-3 h-3 border-t border-r border-[#71717A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-tr-xl" />
-                            <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-[#71717A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-bl-xl" />
-                            <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#71717A] group-hover:border-[#D6D3C9] transition-colors duration-300 rounded-br-xl" />
-                        </a>
-                    </div>
-
+        <article className="w-full max-w-[1440px] mx-auto px-6 md:px-10 pt-8 md:pt-12 pb-20 paper-fade">
+            <div className="max-w-[520px]">
+                <div className="space-y-3 text-[14.5px] md:text-[15px] leading-[1.65] text-ink">
+                    <p>
+                        <em className="italic">independent freelance</em> director &amp; editor<FootnoteRef n={1} target="fn-1" />
+                    </p>
+                    <p className="text-[12.5px] text-ink-muted">
+                        london — worldwide<FootnoteRef n={2} target="fn-2" />
+                    </p>
                 </div>
+
+                {/* Footnotes */}
+                <section aria-label="notes" className="mt-14 pt-5 border-t border-rule">
+                    <ol className="list-none m-0 p-0 space-y-2.5 text-[11.5px] leading-[1.6] text-ink-muted">
+                        <li id="fn-1" className="grid grid-cols-[1.5rem_1fr] items-baseline gap-2 target:text-ink">
+                            <span className="tabular-nums text-[10.5px] text-ink-subtle">1.</span>
+                            <span>
+                                <span className="italic">editor roster</span> —{' '}
+                                <a
+                                    href="https://www.wildislandfilms.com/talent/riccardo-fusetti"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-ink underline underline-offset-4 decoration-rule hover:decoration-ink transition-colors"
+                                >
+                                    wild island films
+                                </a>
+                            </span>
+                        </li>
+
+                        <li id="fn-2" className="grid grid-cols-[1.5rem_1fr] items-baseline gap-2 target:text-ink">
+                            <span className="tabular-nums text-[10.5px] text-ink-subtle">2.</span>
+                            <span>
+                                <span className="italic">get in touch</span> —{' '}
+                                <a
+                                    href="mailto:fusetti.riccardo@gmail.com"
+                                    className="text-ink underline underline-offset-4 decoration-rule hover:decoration-ink transition-colors"
+                                >
+                                    fusetti.riccardo@gmail.com
+                                </a>
+                            </span>
+                        </li>
+                    </ol>
+                </section>
             </div>
-        </div>
+        </article>
     );
 }

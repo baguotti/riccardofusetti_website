@@ -43,4 +43,7 @@ function privateFilesDev(): Plugin {
 
 export default defineConfig({
     plugins: [tailwindcss(), reactRouter(), privateFilesDev()],
+    optimizeDeps: {
+        include: ['react', 'react-dom', 'react-dom/client', 'react-router', 'lucide-react'],
+    },
 });
