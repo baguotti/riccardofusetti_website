@@ -8,6 +8,7 @@ export const projects: Project[] = [
         category: 'director',
         projectType: 'Narrative',
         thumbnailUrl: '/assets/director/editorial-short/editorial-short_still_01.jpg',
+        previewVideoUrl: '/assets/director/editorial-short/editorial-short_preview.mp4',
         posterThumbUrl: '/assets/director/editorial-short/editorial-short_thumbnail_vertical.webp',
         isVertical: false,
         videoEmbedUrl: 'https://player.vimeo.com/video/1069658930',
@@ -243,6 +244,7 @@ export const projects: Project[] = [
         title: 'FILA 2022',
         category: 'editor',
         thumbnailUrl: '/assets/editor/fila-2022/fila-2022_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/fila-2022/fila-2022_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/710480886',
         credits: [
             { role: 'Edit + VFX', name: 'Riccardo Fusetti' },
@@ -263,6 +265,7 @@ export const projects: Project[] = [
     title: 'Glossier You // Impressions of you',
     category: 'editor',
     thumbnailUrl: '/assets/editor/glossier-you/glossier-you_thumbnail.webp',
+    previewVideoUrl: '/assets/editor/glossier-you/glossier-you-preview.mp4',
     videoEmbedUrl: 'https://player.vimeo.com/video/1016249812',
     credits: [
         { role: 'Editor / Sound design', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
@@ -290,6 +293,7 @@ export const projects: Project[] = [
         title: 'SAVAGE X FENTY Mens Loungewear',
         category: 'editor',
         thumbnailUrl: '/assets/editor/savagexfenty/savagexfenty_thumbnail.png',
+        previewVideoUrl: '/assets/editor/savagexfenty/savagexfenty_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/1062813923',
         credits: [
             { role: 'Edit', name: 'Riccardo Fusetti' },
@@ -307,6 +311,7 @@ export const projects: Project[] = [
         title: 'Silent Sam // Documentary',
         category: 'editor',
         thumbnailUrl: '/assets/editor/silent-sam/silent-sam_thumbnail.jpg',
+        previewVideoUrl: '/assets/editor/silent-sam/silent-sam_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/289836809',
         credits: [
             { role: 'Commissioned by', name: 'The Guardian' },
@@ -323,6 +328,7 @@ export const projects: Project[] = [
         title: 'MR. Porter // High Summer 25',
         category: 'editor',
         thumbnailUrl: '/assets/editor/mr-porter-high-summer-25/mr-porter-high-summer-25_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/mr-porter-high-summer-25/mr-porter-high-summer-25_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/1168093683?h=7108478a77',
         credits: [
             { role: 'Client', name: 'Mr. Porter', instagram: 'mrporter' },
@@ -346,6 +352,7 @@ export const projects: Project[] = [
         title: 'Harvey Nichols Xmas 25',
         category: 'editor',
         thumbnailUrl: '/assets/editor/harvey-nichols-xmas-25/harvey-nichols-xmas-25_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/harvey-nichols-xmas-25/harvey-nichols-xmas-25_preview.mp4',
         isVertical: true,
         videoEmbedUrls: [
             'https://player.vimeo.com/video/1168095796?h=200734b769',
@@ -377,6 +384,7 @@ export const projects: Project[] = [
         title: 'Net-A-Porter SS24',
         category: 'editor',
         thumbnailUrl: '/assets/editor/nap-ss24/nap-ss24_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/nap-ss24/nap-ss24_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/933781681',
         credits: [
             { role: 'Editor', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
@@ -400,6 +408,7 @@ export const projects: Project[] = [
         title: 'Theory // 25 Campaign',
         category: 'editor',
         thumbnailUrl: '/assets/editor/theory-25-campaign/theory-25-campaign_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/theory-25-campaign/theory-25-campaign_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/1168094521?h=b1ed13e118',
         description: "Britt Lower and Calvin Royal III for Theory's Made in New York Campaign",
         credits: [
@@ -422,6 +431,7 @@ export const projects: Project[] = [
         title: 'Primark // Spring',
         category: 'editor',
         thumbnailUrl: '/assets/editor/primark-spring/primark-spring_thumbnail.jpg',
+        previewVideoUrl: '/assets/editor/primark-spring/primark-spring-preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/661987360',
         credits: [
             { role: 'Edit + Sound Design', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
@@ -434,6 +444,7 @@ export const projects: Project[] = [
         title: 'Glossier // Ultralip',
         category: 'editor',
         thumbnailUrl: '/assets/editor/glossier-ultralip/glossier-ultralip_thumbnail.jpg',
+        previewVideoUrl: '/assets/editor/glossier-ultralip/glossier-ultralip_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/661984905',
         credits: [
             { role: 'Edit', name: 'Riccardo Fusetti @Wild Island Films' },
@@ -445,6 +456,7 @@ export const projects: Project[] = [
         title: 'NIKE - Top Surfers 2026',
         category: 'editor',
         thumbnailUrl: '/assets/editor/nike-top-surfers-2026/nike-top-surfers-2026_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/nike-top-surfers-2026/nike-top-surfers-2026_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/1168503142?h=d4152e46d9',
         description: 'Top Surfers for Nike and Nike Sportswear',
         credits: [
@@ -461,8 +473,7 @@ export const projects: Project[] = [
             { role: 'Something Special Studios', name: 'Sammie Purulak', instagram: 'sammiepurulak', url: 'https://www.instagram.com/sammiepurulak' },
             { role: 'Something Special Studios', name: '@chloesnowa', instagram: 'chloesnowa', url: 'https://www.instagram.com/chloesnowa' },
             { role: 'Post', name: 'Wild Island Films', instagram: 'wildislandfilms', url: 'https://www.instagram.com/wildislandfilms' },
-            { role: 'Edit', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti', url: 'https://www.instagram.com/riccardo.fusetti' },
-            { role: 'Edit', name: 'Orlando Cubitt', instagram: 'orlandocubitt', url: 'https://www.instagram.com/orlandocubitt' },
+            { role: 'Edit', name: 'Riccardo Fusetti + Orlando Cubitt' },
             { role: 'Grade', name: 'Cristina Giribets', instagram: 'crisgiribets', url: 'https://www.instagram.com/crisgiribets' },
             { role: 'Post Producer', name: 'Rob Farrelly', instagram: 'roobtubehq', url: 'https://www.instagram.com/roobtubehq' }
         ]
@@ -472,6 +483,7 @@ export const projects: Project[] = [
         title: 'Calvin Klein Jeans',
         category: 'editor',
         thumbnailUrl: '/assets/editor/calvin-klein-jeans/calvin-klein-jeans_thumbnail.jpg',
+        previewVideoUrl: '/assets/editor/calvin-klein-jeans/calvin-klein-jeans_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/661990174',
         credits: [
             { role: 'Edit + Sound Design', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti' },
@@ -483,6 +495,7 @@ export const projects: Project[] = [
         title: 'Vogue x Bella Hadid',
         category: 'editor',
         thumbnailUrl: '/assets/editor/vogue-bella-hadid/vogue-bella-hadid_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/vogue-bella-hadid/vogue-bella-hadid_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/661990494',
         credits: [
             { role: 'Editor', name: 'Riccardo Fusetti' }
@@ -519,6 +532,7 @@ export const projects: Project[] = [
         title: 'Palace - Heaven Up There',
         category: 'editor',
         thumbnailUrl: '/assets/editor/heaven-up-there/heaven-up-there_thumbnail.jpg',
+        previewVideoUrl: '/assets/editor/heaven-up-there/heaven-up-therepreview.mp4',
         videoEmbedUrl: 'https://www.youtube.com/embed/1cS_i-zDdxg',
         credits: [
             { role: 'Editor', name: 'Riccardo Fusetti' },
@@ -531,6 +545,7 @@ export const projects: Project[] = [
         title: 'Bosideng X Kim Jones AREAL // 25',
         category: 'editor',
         thumbnailUrl: '/assets/editor/bosideng-25/bosideng-25_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/bosideng-25/bosideng-25_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/1168094091?h=4f5a4e55f5',
         credits: [
             { role: 'Creative Direction & Branding', name: 'DJA', instagram: 'dja_dj' },
@@ -549,6 +564,7 @@ export const projects: Project[] = [
         title: 'Matches Fashion',
         category: 'editor',
         thumbnailUrl: '/assets/editor/matches-fashion/matches-fashion_thumbnail.webp',
+        previewVideoUrl: '/assets/editor/matches-fashion/matches-fashion_preview.mp4',
         videoEmbedUrl: 'https://player.vimeo.com/video/661988091?h=2740fddc5f',
         credits: [
             { role: 'Editor', name: 'Riccardo Fusetti', instagram: 'riccardo.fusetti', url: 'https://www.instagram.com/riccardo.fusetti' }

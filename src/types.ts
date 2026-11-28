@@ -32,6 +32,7 @@ export type Project = {
     category: 'director' | 'editor';
     projectType?: 'Narrative' | 'Music Video' | string;
     thumbnailUrl: string;
+    previewVideoUrl?: string;
     videoEmbedUrl?: string;
     videoEmbedUrls?: string[];
     videoThumbnails?: string[];
