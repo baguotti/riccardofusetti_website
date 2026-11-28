@@ -8,13 +8,14 @@ const HERO_PREVIEW_SIZES = '(min-width: 1280px) 340px, (min-width: 1024px) 28vw,
 const STRIP_STILL_SIZES = '(min-width: 1024px) 640px, 85vw';
 
 export default function DirectorIndex() {
-    const [activeId, setActiveId] = useState<string>(directorEntries[0].project.id);
+    const [activeId, setActiveId] = useState<string | null>(null);
     const [hoveredId, setHoveredId] = useState<string | null>(null);
-    const [visitedIds, setVisitedIds] = useState<Set<string>>(() => new Set([directorEntries[0].project.id]));
+    const [visitedIds, setVisitedIds] = useState<Set<string>>(() => new Set());
     const stripRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
     // Reset horizontal scroll and wire vertical mouse-wheel -> horizontal scroll on the active strip.
     useEffect(() => {
+        if (!activeId) return;
         const el = stripRefs.current[activeId];
         if (!el) return;
         el.scrollLeft = 0;
@@ -61,8 +62,7 @@ export default function DirectorIndex() {
                         className="w-full"
                         onPointerLeave={() => setHoveredId(null)}
                     >
-                        <div className="pb-2 border-b border-rule grid grid-cols-[1.75rem_1fr_auto] sm:grid-cols-[2rem_1fr_5.5rem_2.75rem] gap-3 items-baseline text-[10.5px] italic text-ink-subtle">
-                            <span>no.</span>
+                        <div className="pb-2 border-b border-rule grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_5.5rem_2.75rem] gap-3 items-baseline text-[10.5px] italic text-ink-subtle">
                             <span>title</span>
                             <span className="hidden sm:block">format</span>
                             <span className="text-right">year</span>
@@ -82,14 +82,10 @@ export default function DirectorIndex() {
                                             prefetch="intent"
                                             onPointerEnter={() => activateRow(entry, true)}
                                             onFocus={() => activateRow(entry, false)}
-                                            className={`group py-3.5 grid grid-cols-[1.75rem_1fr_auto] sm:grid-cols-[2rem_1fr_5.5rem_2.75rem] gap-x-3 gap-y-2 items-baseline transition-opacity duration-200 focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink ${
+                                            className={`group py-3.5 grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_5.5rem_2.75rem] gap-x-3 gap-y-2 items-baseline transition-opacity duration-200 focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink ${
                                                 dimmed ? 'opacity-35' : 'opacity-100'
                                             }`}
                                         >
-                                            <span className="text-[11px] text-ink-subtle tabular-nums">
-                                                {entry.indexLabel}
-                                            </span>
-
                                             <div className="min-w-0 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                                                 <span
                                                     className={`text-[14px] md:text-[14.5px] leading-[1.3] tracking-[-0.005em] text-ink transition-all duration-150 ${
