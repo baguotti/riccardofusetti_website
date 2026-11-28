@@ -7,7 +7,7 @@
         { "source": "/director", "destination": "/", "permanent": true }
     ],
     "rewrites": [
-        { "source": "/((?!api/|private/|assets/|img/).*)", "destination": "/__spa-fallback.html" }
+        { "source": "/((?!api/|private/|assets/|img/|_vercel/).*)", "destination": "/__spa-fallback.html" }
     ],
     "headers": [
         {

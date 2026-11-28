@@ -1,4 +1,6 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse, Link, useLocation } from 'react-router';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import type { Route } from './+types/root';
 import stylesheet from './index.css?url';
 import interFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
@@ -39,6 +41,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </head>
             <body>
                 {children}
+                <Analytics />
+                <SpeedInsights />
                 <ScrollRestoration />
                 <Scripts />
             </body>
