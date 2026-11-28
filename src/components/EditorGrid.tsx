@@ -87,45 +87,47 @@ function EditorCard({ entry, idx }: { entry: EditorEntry; idx: number }) {
             onBlur={handleLeave}
             className="group relative block aspect-video w-full overflow-hidden bg-paper-inset ring-1 ring-ink/[0.06] focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-ink"
         >
-            <Img
-                src={entry.project.thumbnailUrl}
-                sizes={CARD_SIZES}
-                priority={idx < 6}
-                alt={entry.displayTitle}
-                className="w-full h-full object-cover"
-            />
-
-            {previewUrl && shouldLoadVideo && (
-                <video
-                    ref={videoRef}
-                    src={previewUrl}
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    aria-hidden="true"
-                    onCanPlay={() => {
-                        setIsVideoReady(true);
-                        if (isHovering) {
-                            const video = videoRef.current;
-                            if (video && video.paused) {
-                                video.currentTime = 0;
-                                video.play().catch(() => {});
-                            }
-                        }
-                    }}
-                    onPlaying={() => setIsVideoReady(true)}
-                    className={`pointer-events-none absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ease-out ${
-                        showVideo ? 'opacity-100' : 'opacity-0'
-                    }`}
+            <div className="relative w-full h-full overflow-hidden [clip-path:inset(0)]">
+                <Img
+                    src={entry.project.thumbnailUrl}
+                    sizes={CARD_SIZES}
+                    priority={idx < 6}
+                    alt={entry.displayTitle}
+                    className="w-full h-full object-cover"
                 />
-            )}
 
-            {/* Subtle bottom-left title revealed on hover / focus */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 pt-10 pb-2.5 px-3 bg-gradient-to-t from-[#111110]/60 via-[#111110]/20 to-transparent opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 ease-out">
-                <span className="block text-[12px] leading-none text-[#F4F3EF] truncate">
-                    {entry.title}
-                </span>
+                {previewUrl && shouldLoadVideo && (
+                    <video
+                        ref={videoRef}
+                        src={previewUrl}
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        aria-hidden="true"
+                        onCanPlay={() => {
+                            setIsVideoReady(true);
+                            if (isHovering) {
+                                const video = videoRef.current;
+                                if (video && video.paused) {
+                                    video.currentTime = 0;
+                                    video.play().catch(() => {});
+                                }
+                            }
+                        }}
+                        onPlaying={() => setIsVideoReady(true)}
+                        className={`pointer-events-none absolute inset-0 w-full h-full object-cover scale-[1.015] transition-opacity duration-200 ease-out ${
+                            showVideo ? 'opacity-100' : 'opacity-0'
+                        }`}
+                    />
+                )}
+
+                {/* Subtle bottom-left title revealed on hover / focus */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 pt-10 pb-2.5 px-3 bg-gradient-to-t from-[#111110]/60 via-[#111110]/20 to-transparent opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 ease-out">
+                    <span className="block text-[12px] leading-none text-[#F4F3EF] truncate">
+                        {entry.title}
+                    </span>
+                </div>
             </div>
         </Link>
     );
