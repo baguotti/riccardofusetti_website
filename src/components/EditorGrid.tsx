@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { editorEntries, type EditorEntry } from '../data/directorMeta';
 import Img, { preloadImage } from './Img';
@@ -6,12 +6,53 @@ import { HERO_SIZES } from './sizes';
 
 const CARD_SIZES = '(min-width: 1440px) 440px, (min-width: 1024px) 31vw, (min-width: 640px) 47vw, 100vw';
 
+function canPreloadPreviews(): boolean {
+    if (typeof window === 'undefined') return false;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+    const nav = navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } };
+    if (nav.connection?.saveData) return false;
+    if (nav.connection?.effectiveType === '2g' || nav.connection?.effectiveType === 'slow-2g') return false;
+    return true;
+}
+
 function EditorCard({ entry, idx }: { entry: EditorEntry; idx: number }) {
+    const linkRef = useRef<HTMLAnchorElement>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
     const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
     const [isHovering, setIsHovering] = useState(false);
     const [isVideoReady, setIsVideoReady] = useState(false);
     const previewUrl = entry.project.previewVideoUrl;
+
+    // Pre-buffer preview clips once the card is near the viewport so first hover plays instantly.
+    useEffect(() => {
+        if (!previewUrl || !canPreloadPreviews()) return;
+        const el = linkRef.current;
+        if (!el) return;
+
+        let idleId: number | undefined;
+        let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (!entries[0]?.isIntersecting) return;
+                observer.disconnect();
+                const start = () => setShouldLoadVideo(true);
+                if ('requestIdleCallback' in window) {
+                    idleId = window.requestIdleCallback(start, { timeout: 1200 });
+                } else {
+                    timeoutId = setTimeout(start, 200);
+                }
+            },
+            { rootMargin: '200px' }
+        );
+
+        observer.observe(el);
+        return () => {
+            observer.disconnect();
+            if (idleId !== undefined && 'cancelIdleCallback' in window) window.cancelIdleCallback(idleId);
+            if (timeoutId !== undefined) clearTimeout(timeoutId);
+        };
+    }, [previewUrl]);
 
     const handleEnter = () => {
         preloadImage(entry.project.thumbnailUrl, HERO_SIZES);
@@ -36,6 +77,7 @@ function EditorCard({ entry, idx }: { entry: EditorEntry; idx: number }) {
 
     return (
         <Link
+            ref={linkRef}
             to={`/project/${entry.project.id}`}
             viewTransition
             prefetch="intent"
@@ -60,11 +102,20 @@ function EditorCard({ entry, idx }: { entry: EditorEntry; idx: number }) {
                     muted
                     loop
                     playsInline
-                    autoPlay
                     preload="auto"
                     aria-hidden="true"
+                    onCanPlay={() => {
+                        setIsVideoReady(true);
+                        if (isHovering) {
+                            const video = videoRef.current;
+                            if (video && video.paused) {
+                                video.currentTime = 0;
+                                video.play().catch(() => {});
+                            }
+                        }
+                    }}
                     onPlaying={() => setIsVideoReady(true)}
-                    className={`pointer-events-none absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-out ${
+                    className={`pointer-events-none absolute inset-0 w-full h-full object-cover transition-opacity duration-200 ease-out ${
                         showVideo ? 'opacity-100' : 'opacity-0'
                     }`}
                 />
